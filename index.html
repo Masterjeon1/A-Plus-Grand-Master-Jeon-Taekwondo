@@ -3,94 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Plus Grand Master Jeon Taekwondo</title>
+    <title>A Plus Grand Master Jeon Taekwondo | Chester, NJ</title>
     <style>
         :root {
-            --primary: #d32f2f;
-            --secondary: #1976d2;
-            --dark: #212121;
-            --light: #f5f5f5;
+            --primary: #c62828; /* Martial arts red */
+            --primary-dark: #8e0000;
+            --secondary: #1565c0; /* Belt blue */
+            --gold: #fbc02d;
+            --dark: #181818;
+            --light: #f8f9fa;
+            --text: #333333;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--dark); line-height: 1.6; }
-        header { background: var(--dark); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        header h1 { margin: 0; font-size: 1.5rem; color: var(--primary); }
-        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
-        nav a:hover { color: var(--primary); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://unsplash.com') no-repeat center center/cover; height: 60vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-        .hero h2 { font-size: 3rem; margin: 0 0 10px 0; text-transform: uppercase; }
-        .hero p { font-size: 1.25rem; margin-bottom: 20px; }
-        .btn { background: var(--primary); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
-        .btn:hover { background: #b71c1c; }
-        .section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
-        .card { background: var(--light); padding: 25px; border-radius: 8px; width: 280px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card h3 { color: var(--primary); margin-top: 0; }
-        footer { background: var(--dark); color: #888; text-align: center; padding: 20px; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; }
+        
+        /* Top Promo & Contact Bar */
+        .top-bar { background: #111; color: #eee; font-size: 0.85rem; padding: 8px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .top-bar a { color: var(--gold); text-decoration: none; font-weight: bold; }
+        .promo-pill { background: var(--primary); color: white; padding: 2px 10px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; }
 
-    <header>
-        <h1>A Plus Grand Master Jeon</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#programs">Programs</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        /* Navigation */
+        header { background: var(--dark); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.4); flex-wrap: wrap; }
+        header h1 { margin: 0; font-size: 1.3rem; color: white; letter-spacing: 0.5px; }
+        header h1 span { color: var(--primary); }
+        nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+        nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: 0.2s; }
+        nav a:hover { color: var(--gold); }
+        .nav-cta { background: var(--primary); padding: 7px 14px; border-radius: 4px; color: white !important; }
+        .nav-cta:hover { background: var(--primary-dark); }
 
-    <section class="hero">
-        <h2>Discipline. Focus. Respect.</h2>
-        <p>Train with World-Class Grand Master Jeon</p>
-        <a href="#contact" class="btn">Get a Free Trial Class</a>
-    </section>
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.68)), url('https://unsplash.com') no-repeat center center/cover; min-height: 68vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 50px 20px; }
+        .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
+        .badge { background: var(--primary); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .badge-gold { background: var(--gold); color: #111; }
+        .hero h2 { font-size: 2.8rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 850px; line-height: 1.15; }
+        .hero p { font-size: 1.18rem; margin-bottom: 28px; max-width: 680px; color: #f0f0f0; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn { background: var(--primary); color: white; padding: 14px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s; display: inline-block; border: none; cursor: pointer; font-size: 0.95rem; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 2px solid white; color: white; }
+        .btn-outline:hover { background: white; color: var(--dark); }
 
-    <section id="about" class="section">
-        <h2>Welcome to Our Dojang</h2>
-        <p>At A Plus Grand Master Jeon Taekwondo, we offer premier martial arts training designed to build physical strength, mental clarity, and character development for all ages. Under the guidance of Grand Master Jeon, our students learn self-defense while gaining confidence and fitness.</p>
-    </section>
+        /* General Sections */
+        .section { padding: 70px 20px; max-width: 1150px; margin: 0 auto; }
+        .bg-light { background: var(--light); }
+        .bg-dark { background: var(--dark); color: white; }
+        .section-title { text-align: center; margin-bottom: 45px; }
+        .section-title h2 { font-size: 2.2rem; margin: 0 0 10px 0; }
+        .section-title p { color: #555; max-width: 680px; margin: 10px auto 0; font-size: 1.05rem; }
+        .bg-dark .section-title p { color: #bbb; }
+        .underline { width: 65px; height: 4px; background: var(--primary); margin: 0 auto; }
 
-    <section id="programs" class="section" style="background: #fff;">
-        <h2>Our Programs</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Little Tigers</h3>
-                <p>Ages 4-6. Focusing on basic motor skills, listening, coordination, and introducing foundational respect.</p>
-            </div>
-            <div class="card">
-                <h3>Children & Teens</h3>
-                <p>Ages 7+. Build bully-defense, physical fitness, confidence, and competitive Taekwondo skills.</p>
-            </div>
-            <div class="card">
-                <h3>Adult Martial Arts</h3>
-                <p>Stress relief, core strength, flexible high-intensity training, and practical self-defense tactics.</p>
-            </div>
-        </div>
-    </section>
+        /* Monthly News & Promotions */
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .promo-card { background: linear-gradient(135deg, #fffdf5, #fff8e1); border: 2px solid var(--gold); border-radius: 8px; padding: 28px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .promo-tag { display: inline-block; background: var(--primary); color: white; font-size: 0.78rem; font-weight: bold; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .promo-card h3 { margin: 0 0 10px 0; font-size: 1.35rem; color: var(--dark); }
+        .news-card { background: white; border: 1px solid #e5e5e5; border-left: 5px solid var(--secondary); border-radius: 8px; padding: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .news-date { font-size: 0.82rem; font-weight: bold; color: var(--secondary); text-transform: uppercase; margin-bottom: 6px; display: block; }
+        .news-card h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
 
-    <section id="contact" class="section">
-        <h2>Start Your Journey Today</h2>
-        <p>Have questions or want to claim your free trial? Contact us below.</p>
-        <form action="https://formspree.io" method="POST" style="max-width: 500px; margin: 30px auto; text-align: left;">
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">Name</label>
-                <input type="text" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius:4px;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">Email</label>
-                <input type="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius:4px;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">Message / Age of Student</label>
-                <textarea name="message" rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius:4px;"></textarea>
-            </div>
-            <button type="submit" class="btn" style="border: none; width: 100%; cursor: pointer;">Send Message</button>
-        </form>
-    </section>
+        /* About Grand Master Jeon */
+        .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: center; }
+        .master-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid var(--primary); }
+        .master-card h3 { margin-top: 0; color: var(--primary); font-size: 1.4rem; }
+        .master-list { padding-left: 20px; margin-bottom: 0; }
+        .master-list li { margin-bottom: 12px; }
+        .unlimited-banner { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 25px; border-radius: 8px; margin-top: 25px; text-align: center; }
+        .unlimited-banner h4 { margin: 0 0 8px 0; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    <footer>
-        <p>&copy; 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
-    </footer>
+        /* Programs Grid */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--primary); }
+        .card h3 { color: var(--dark); margin-top: 0; font-size: 1.35rem; }
+        .age-tag { display: inline-block; background: #eee; color: #444; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; }
 
-</body>
-</html>
+        /* Class Schedule Callout Box */
+        .schedule-box { background: white; border: 1px solid #e0e0e0; border-top: 5px solid var(--primary); border-radius: 8px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.06); max-width: 850px; margin: 0 auto; }
+        .schedule-box h3 { margin-top: 0; font-size: 1.5rem; color: var(--dark); }
+        .schedule-box p { font-size: 1.05rem; color: #444; max-width: 650px; margin: 0 auto 25px auto; }
+        .schedule-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 25px; }
+        .sched-pill { background: var(--light); border: 1px solid #ddd; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; color: var(--dark); }
+
+        /* Pro Shop / Gear Items */
+        .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+        .shop-item { background: white; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+        .shop-icon-box { background: #222; color: white; height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.5rem; }
+        .shop-icon-box span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; color: var(--gold); font-weight: bold; }
+        .shop-details { padding: 20px; text-align: center; }
+        .shop-details h3 { margin: 0 0 8px 0; font-size: 1.15rem; }
+        .shop-details p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+        .shop-btn { display: inline-block; padding: 8px 16px; background: var(--dark); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .shop-btn:hover { background: var(--primary); }
+
+        /* Photo Gallery */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .gallery-card { position: relative; border-radius: 8px; overflow: hidden; height: 220px; background: #222; }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .gallery-card:hover img { transform: scale(1.05); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; padding: 15px; font-weight: 600; font-size: 0.95rem; }
+
+        /* Student Reviews */
+        .review-card { background: #242424; padding: 28px; border-radius: 8px; border-top: 4px solid var(--gold); }
+        .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; }
+        .review-text { font-style: italic; color: #e0e0e0; margin-bottom: 15px; font-size: 0.95rem; }
+        .reviewer { font-weight: bold; color: white; font-size: 0.9rem; }
+
+        /* Location & Sign Up Form */
+        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .info-card { background: var(--light); padding: 30px; border-radius: 8px; }
+        .info-item { margin-bottom: 18px; }
+        .info-item strong { display: block; color: var(--primary); font-size: 1.05rem; margin-bottom: 4px; }
