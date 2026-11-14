@@ -77,19 +77,30 @@
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
         .gallery-card {
             position: relative;
-            border-radius: 8px;
+            border-radius: 16px;
             overflow: hidden;
-            background: #181818;
-            align-self: start;
+            height: 245px;
+            background: #240046;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(157, 78, 221, 0.5);
+            box-shadow: 0 8px 24px rgba(90, 24, 154, 0.22);
         }
-        .gallery-card img { width: 100%; height: auto; display: block; }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .gallery-card img[src="2025-05-06.jpg"] { object-fit: contain; }
+        .gallery-card:hover img { transform: scale(1.05); }
         .gallery-caption {
-            background: #181818;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, rgba(16, 0, 43, 0.9), rgba(90, 24, 154, 0.88), rgba(29, 78, 216, 0.88));
             color: white;
-            padding: 12px 15px;
+            padding: 12px;
             font-weight: 600;
-            font-size: 0.92rem;
             text-align: center;
+            border-top: 1px solid rgba(224, 170, 255, 0.4);
         }
         .review-card { background: linear-gradient(145deg, rgba(60, 9, 108, 0.72) 0%, rgba(30, 58, 138, 0.65) 100%); backdrop-filter: blur(8px); padding: 26px; border-radius: 16px; border: 1px solid rgba(224, 170, 255, 0.45); border-top: 4px solid var(--gold); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35); transition: transform 0.3s ease; }
         .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
@@ -342,11 +353,11 @@
 
         <div class="gallery-grid">
             <div class="gallery-card">
-                <img src="2026-04-10.jpg" alt="West Point &amp; Royal Military College of Canada (RMC) team">
-                <div class="gallery-caption">West Point &amp; Royal Military College of Canada (RMC) team</div>
+                <img src="2026-04-10.jpg" alt="A Plus Grand Master Jeon Taekwondo">
+                <div class="gallery-caption">Dojang Class &amp; Training Highlights</div>
             </div>
             <div class="gallery-card">
-                <img src="2026-04-10%20(1).jpg" alt="Building Focus, Balance &amp; Confidence">
+                <img src="2026-04-10%20(1).jpg" alt="Taekwondo Student Practice">
                 <div class="gallery-caption">Building Focus, Balance &amp; Confidence</div>
             </div>
             <div class="gallery-card">
