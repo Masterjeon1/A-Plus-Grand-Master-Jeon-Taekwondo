@@ -10,547 +10,69 @@
             --primary-dark: #8e0000;
             --secondary: #1565c0;
             --royal-blue: #1e40af;
-            --royal-purple: #5b21b6;
-            --purple-glow: #7c3aed;
             --gold: #ffd700;
             --gold-shine: linear-gradient(135deg, #fff3a1 0%, #ffd700 45%, #d4af37 75%, #fff099 100%);
-            --blue-purple-shine: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #4c1d95 85%, #1e1b4b 100%);
-            --card-shine: linear-gradient(145deg, #ffffff 0%, #f5f7ff 55%, #f3e8ff 100%);
-            --dark: #0f1021;
-            --light: #f3f5ff;
-            --text: #22223b;
+            --navy-shine: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #172554 100%);
+            --card-shine: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #1e293b;
         }
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; background: #ffffff; }
-        .top-bar { background: linear-gradient(90deg, #0b0f29 0%, #1e1b4b 50%, #3b0764 100%); color: #f8fafc; font-size: 0.85rem; padding: 9px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255, 215, 0, 0.35); }
+        .top-bar { background: #0f172a; color: #f8fafc; font-size: 0.85rem; padding: 9px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255, 215, 0, 0.35); }
         .top-bar a { color: var(--gold); text-decoration: none; font-weight: bold; }
         .top-bar a:hover { text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); }
-        .promo-pill { background: linear-gradient(135deg, #d50000 0%, #6d28d9 100%); color: white; padding: 3px 12px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 10px rgba(124, 58, 237, 0.45); border: 1px solid rgba(255, 255, 255, 0.25); }
-        header { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #3b0764 100%); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(30, 58, 138, 0.45); border-bottom: 2px solid var(--gold); flex-wrap: wrap; }
+        .promo-pill { background: var(--primary); color: white; padding: 3px 12px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 8px rgba(213, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.25); }
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.35); border-bottom: 2px solid var(--gold); flex-wrap: wrap; }
         header h1 { margin: 0; font-size: 1.3rem; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.45); }
         header h1 span { background: var(--gold-shine); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
         nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
         nav a { color: #f1f5f9; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.25s ease; }
         nav a:hover { color: var(--gold); text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
-        .nav-cta { background: linear-gradient(135deg, #e11d48 0%, #7c3aed 100%); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 14px rgba(124, 58, 237, 0.45); border: 1px solid rgba(255, 215, 0, 0.5); }
-        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(124, 58, 237, 0.65); }
-        .hero { background: linear-gradient(135deg, rgba(15, 23, 42, 0.82) 0%, rgba(30, 58, 138, 0.75) 50%, rgba(88, 28, 135, 0.8) 100%), url('hero.jpg') no-repeat center center/cover; min-height: 68vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 55px 20px; position: relative; border-bottom: 3px solid var(--gold); }
+        .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(213, 0, 0, 0.35); border: 1px solid rgba(255, 215, 0, 0.5); }
+        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .hero { background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.75) 100%), url('hero.jpg') no-repeat center center/cover; min-height: 68vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 55px 20px; position: relative; border-bottom: 3px solid var(--gold); }
         .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
-        .badge { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.45); border: 1px solid rgba(255, 255, 255, 0.35); }
+        .badge { background: var(--secondary); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 12px rgba(21, 101, 192, 0.4); border: 1px solid rgba(255, 255, 255, 0.35); }
         .badge-gold { background: var(--gold-shine); color: #111827; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.45); border: 1px solid #fff; }
         .hero h2 { font-size: 2.7rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 860px; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65); letter-spacing: 0.5px; }
         .hero p { font-size: 1.15rem; margin-bottom: 28px; max-width: 680px; color: #f8fafc; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
         .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
-        .btn { background: linear-gradient(135deg, #2563eb 0%, #6d28d9 50%, #c62828 100%); background-size: 200% auto; color: white; padding: 14px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; border: 1px solid rgba(255, 215, 0, 0.45); cursor: pointer; font-size: 0.95rem; box-shadow: 0 6px 20px rgba(76, 29, 149, 0.38); transition: all 0.3s ease; }
-        .btn:hover { background-position: right center; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(124, 58, 237, 0.55); }
+        .btn { background: var(--primary); color: white; padding: 14px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; border: 1px solid rgba(255, 215, 0, 0.45); cursor: pointer; font-size: 0.95rem; box-shadow: 0 6px 16px rgba(213, 0, 0, 0.35); transition: all 0.3s ease; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(213, 0, 0, 0.45); }
         .btn-outline { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(4px); border: 2px solid var(--gold); color: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); }
         .btn-outline:hover { background: var(--gold-shine); color: #111827; }
         .section { padding: 65px 20px; max-width: 1150px; margin: 0 auto; }
-        .bg-light { background: linear-gradient(180deg, #eef2ff 0%, #f5f3ff 50%, #eef2ff 100%); }
-        .bg-dark { background: var(--blue-purple-shine); color: white; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
+        .bg-light { background: #f8fafc; }
+        .bg-dark { background: var(--navy-shine); color: white; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
         .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { font-size: 2.15rem; margin: 0 0 10px 0; color: #1e1b4b; }
-        .bg-dark .section-title h2 { color: #ffffff; text-shadow: 0 2px 10px rgba(124, 58, 237, 0.6); }
+        .section-title h2 { font-size: 2.15rem; margin: 0 0 10px 0; color: #0f172a; }
+        .bg-dark .section-title h2 { color: #ffffff; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
         .section-title p { color: #475569; max-width: 680px; margin: 10px auto 0; }
         .bg-dark .section-title p { color: #e2e8f0; }
-        .underline { width: 75px; height: 4px; background: linear-gradient(90deg, #2563eb 0%, #7c3aed 50%, #ffd700 100%); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 8px rgba(124, 58, 237, 0.4); }
+        .underline { width: 75px; height: 4px; background: linear-gradient(90deg, #1565c0 0%, #d50000 50%, #ffd700 100%); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(213, 0, 0, 0.3); }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .promo-card { background: linear-gradient(145deg, #ffffff 0%, #eff6ff 55%, #f5f3ff 100%); border: 2px solid #7c3aed; border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(91, 33, 182, 0.14); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(91, 33, 182, 0.24); }
-        .promo-tag { display: inline-block; background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color: white; font-size: 0.78rem; font-weight: bold; text-transform: uppercase; padding: 5px 11px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35); }
-        .news-card { background: var(--card-shine); border: 1px solid #c7d2fe; border-left: 5px solid #4f46e5; border-radius: 10px; padding: 25px; box-shadow: 0 6px 20px rgba(30, 58, 138, 0.09); transition: transform 0.25s ease; }
+        .promo-card { background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); border: 2px solid #1565c0; border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(21, 101, 192, 0.2); }
+        .promo-tag { display: inline-block; background: linear-gradient(135deg, #1565c0 0%, #0f172a 100%); color: white; font-size: 0.78rem; font-weight: bold; text-transform: uppercase; padding: 5px 11px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(21, 101, 192, 0.3); }
+        .news-card { background: var(--card-shine); border: 1px solid #cbd5e1; border-left: 5px solid #1565c0; border-radius: 10px; padding: 25px; box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08); transition: transform 0.25s ease; }
         .news-card:hover { transform: translateY(-3px); }
         .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: center; }
-        .master-card { background: var(--card-shine); padding: 30px; border-radius: 10px; box-shadow: 0 8px 26px rgba(76, 29, 149, 0.14); border-left: 5px solid #6d28d9; border-top: 2px solid #2563eb; }
-        .unlimited-banner { background: linear-gradient(135deg, #1e3a8a 0%, #5b21b6 60%, #991b1b 100%); color: white; padding: 22px; border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 8px 22px rgba(91, 33, 182, 0.32); border: 1px solid rgba(255, 215, 0, 0.5); }
-        .card { background: var(--card-shine); padding: 28px; border-radius: 10px; box-shadow: 0 8px 22px rgba(37, 99, 235, 0.12); text-align: center; border-top: 4px solid #6d28d9; border-bottom: 2px solid #93c5fd; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(109, 40, 217, 0.22); }
-        .age-tag { display: inline-block; background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%); color: #3730a3; padding: 5px 13px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; border: 1px solid #c4b5fd; }
-        .schedule-box { background: var(--card-shine); border: 2px solid #c4b5fd; border-top: 5px solid #2563eb; border-radius: 10px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 0 auto; box-shadow: 0 10px 28px rgba(30, 58, 138, 0.14); }
+        .master-card { background: var(--card-shine); padding: 30px; border-radius: 10px; box-shadow: 0 8px 26px rgba(15, 23, 42, 0.1); border-left: 5px solid #d50000; border-top: 2px solid #1565c0; }
+        .unlimited-banner { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #991b1b 100%); color: white; padding: 22px; border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.28); border: 1px solid rgba(255, 215, 0, 0.5); }
+        .card { background: var(--card-shine); padding: 28px; border-radius: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1); text-align: center; border-top: 4px solid #d50000; border-bottom: 2px solid #93c5fd; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(21, 101, 192, 0.2); }
+        .age-tag { display: inline-block; background: #eff6ff; color: #1e3a8a; padding: 5px 13px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; border: 1px solid #bfdbfe; }
+        .schedule-box { background: var(--card-shine); border: 2px solid #cbd5e1; border-top: 5px solid #1565c0; border-radius: 10px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 0 auto; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1); }
         .schedule-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
-        .sched-pill { background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%); border: 1px solid #a78bfa; color: #1e1b4b; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 6px rgba(124, 58, 237, 0.12); }
+        .sched-pill { background: #eff6ff; border: 1px solid #93c5fd; color: #0f172a; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 6px rgba(21, 101, 192, 0.1); }
         .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .shop-item { background: white; border: 1px solid #c7d2fe; border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 20px; box-shadow: 0 6px 18px rgba(30, 58, 138, 0.1); transition: transform 0.25s ease; }
-        .shop-item:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(109, 40, 217, 0.2); }
-        .shop-icon-box { background: linear-gradient(135deg, #1e3a8a 0%, #5b21b6 100%); color: white; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.2rem; border-bottom: 2px solid var(--gold); }
+        .shop-item { background: white; border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 20px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); transition: transform 0.25s ease; }
+        .shop-item:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(21, 101, 192, 0.18); }
+        .shop-icon-box { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.2rem; border-bottom: 2px solid var(--gold); }
         .shop-icon-box span { font-size: 0.78rem; text-transform: uppercase; margin-top: 6px; color: var(--gold); font-weight: bold; letter-spacing: 0.5px; }
-        .shop-btn { display: inline-block; padding: 9px 18px; background: linear-gradient(135deg, #1e40af 0%, #6d28d9 100%); color: white; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 12px rgba(109, 40, 217, 0.3); }
-        .shop-btn:hover { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); }
+        .shop-btn { display: inline-block; padding: 9px 18px; background: linear-gradient(135deg, #1e40af 0%, #1565c0 100%); color: white; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 12px rgba(21, 101, 192, 0.28); }
+        .shop-btn:hover { background: linear-gradient(135deg, #d50000 0%, #8e0000 100%); }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .gallery-card { position: relative; border-radius: 10px; overflow: hidden; height: 240px; background: #1e1b4b; display: flex; align-items: center; justify-content: center; border: 2px solid #818cf8; box-shadow: 0 8px 20px rgba(30, 58, 138, 0.18); }
-        .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(76, 29, 149, 0.88) 100%); color: white; padding: 12px; font-weight: 600; text-align: center; border-top: 1px solid rgba(255, 215, 0, 0.45); }
-        .review-card { background: linear-gradient(145deg, rgba(30, 41, 59, 0.9) 0%, rgba(49, 16, 102, 0.85) 100%); padding: 25px; border-radius: 10px; border-top: 4px solid var(--gold); border-left: 1px solid rgba(167, 139, 250, 0.4); border-right: 1px solid rgba(96, 165, 250, 0.4); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35); }
-        .stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
-        .google-badge { display: inline-block; font-size: 0.78rem; color: #c4b5fd; margin-top: 4px; font-weight: 600; }
-        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .info-card { background: var(--card-shine); padding: 28px; border-radius: 10px; border: 1px solid #c4b5fd; box-shadow: 0 8px 22px rgba(30, 58, 138, 0.1); }
-        .hours-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-        .hours-table td { padding: 6px 0; border-bottom: 1px solid #ddd6fe; }
-        .hours-table td:last-child { text-align: right; font-weight: 600; color: #312e81; }
-        .map-frame { width: 100%; height: 220px; border: 2px solid #a78bfa; border-radius: 8px; margin-top: 15px; }
-        .form-box { background: white; padding: 28px; border-radius: 10px; box-shadow: 0 10px 28px rgba(76, 29, 149, 0.16); border-top: 5px solid #6d28d9; border-bottom: 3px solid #2563eb; }
-        .form-group { margin-bottom: 14px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9rem; color: #1e1b4b; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #a5b4fc; border-radius: 6px; font-size: 0.95rem; background: #f8faff; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #7c3aed; box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18); background: #ffffff; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        footer { background: linear-gradient(135deg, #090d1e 0%, #1e1b4b 50%, #2e1065 100%); color: #cbd5e1; text-align: center; padding: 35px 20px; font-size: 0.9rem; border-top: 3px solid var(--gold); }
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 10px; text-align: center; }
-            .form-row { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-    <div class="top-bar">
-        <div>📍 23 W. Main St, Chester, NJ 07930 &nbsp;|&nbsp; <span class="promo-pill">6-WEEK TRIAL + UNLIMITED CLASSES &amp; PRIVATE LESSONS</span></div>
-        <div>
-            📞 Call / Text: <a href="tel:9088797721">908-879-7721</a>
-            &nbsp;|&nbsp;
-            📸 <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener">@masterjeonstkd</a>
-        </div>
-    </div>
-
-    <header>
-        <div style="display:flex; align-items:center; gap:12px;">
-            <img src="JEONS-TKD-FINAL.jpg" alt="A Plus Grand Master Jeon Taekwondo Logo" style="height:52px; width:auto; border-radius:6px; border: 1px solid #ffd700;">
-            <h1><span>A Plus</span> Grand Master Jeon Taekwondo</h1>
-        </div>
-        <nav>
-            <a href="#news">News &amp; Promos</a>
-            <a href="#master">Grand Master Jeon</a>
-            <a href="#programs">Programs</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#shop">Pro Shop</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#reviews">Reviews</a>
-            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener">Instagram</a>
-            <a href="#signup" class="nav-cta">Sign Up / Inquire</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-badges">
-            <span class="badge">Free Trial Class</span>
-            <span class="badge badge-gold">6-Week Trial + Free Uniform</span>
-            <span class="badge">1-on-1 Private Lessons</span>
-        </div>
-        <h2>Discipline. Focus. Resilient Confidence.</h2>
-        <p>Train directly with 7th-Degree Black Belt Grand Master Jeon in Chester, NJ. Start with a <strong>Free Trial Class</strong>, join our <strong>6-Week Trial Program</strong> with a free uniform and unlimited classes, or book customized <strong>1-on-1 Private Lessons</strong>.</p>
-        <div class="hero-buttons">
-            <a href="#signup" class="btn">Sign Up For a Free Trial Class</a>
-            <a href="tel:9088797721" class="btn btn-outline">Call 908-879-7721</a>
-        </div>
-    </section>
-
-    <div class="bg-light">
-        <section id="news" class="section">
-            <div class="section-title">
-                <h2>Monthly News &amp; Special Promotions</h2>
-                <div class="underline"></div>
-                <p>Check out our introductory trial offers, customized private lessons, belt testing updates, and dojang news.</p>
-            </div>
-            <div class="grid-2">
-                <div class="promo-card">
-                    <span class="promo-tag">🔥 New Student Special Offer</span>
-                    <h3 style="color:#1e1b4b;">Free Trial Class + 6-Week Trial Program</h3>
-                    <p>Start with a complimentary <strong>Free Trial Class</strong>! Afterward, sign up for our <strong>6-Week Trial Program</strong> to receive a <strong>Free Official Taekwondo Uniform (Dobok)</strong> and <strong>Unlimited Classes</strong> throughout your trial!</p>
-                    <a href="#signup" class="btn" style="padding:10px 20px; font-size:0.85rem;">Start With a Free Trial Class</a>
-                </div>
-                <div class="promo-card">
-                    <span class="promo-tag">🥋 All Ages &amp; All Levels</span>
-                    <h3 style="color:#1e1b4b;">1-on-1 Private Lessons (30-Min or 50-Min)</h3>
-                    <p>We can customize a private training program to meet each student's specific needs! Choose between <strong>30-minute</strong> or <strong>50-minute per-session options</strong> for personalized coaching with Grand Master Jeon. For more info, please send us an email!</p>
-                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                        <a href="mailto:njchestertkd@gmail.com?subject=Private%20Lesson%20Inquiry%20-%20A%20Plus%20Taekwondo" class="btn" style="padding:10px 18px; font-size:0.85rem;">Send Us Email</a>
-                        <a href="#signup" class="shop-btn" style="padding:10px 18px;">Request Online</a>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <span style="color:#4338ca; font-weight:bold; font-size:0.85rem;">📅 MONTHLY DOJANG UPDATE</span>
-                    <h3 style="color:#1e1b4b;">Upcoming Belt Promotion Testing</h3>
-                    <p>Students preparing for their next belt rank should confirm their stripe requirements with Grand Master Jeon during class. Extra practice sessions are included with all Unlimited Class memberships.</p>
-                </div>
-                <div class="news-card">
-                    <span style="color:#4338ca; font-weight:bold; font-size:0.85rem;">❄️ SEASONAL SCHEDULE &amp; GEAR</span>
-                    <h3 style="color:#1e1b4b;">Holiday Schedule &amp; Winter Gear</h3>
-                    <p>Please check the dojang bulletin board for holiday class hours later this month. Cold-weather team hoodies, zip-up jackets, and kicking targets are now stocked in the Pro Shop!</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section id="master" class="section">
-        <div class="section-title">
-            <h2>About Grand Master Jeon</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="master-grid">
-            <div>
-                <img src="Master%20Jeon%20Demo.jpg" alt="Grand Master Jeon Taekwondo Demonstration" style="width:100%; border-radius:10px; box-shadow: 0 8px 24px rgba(76, 29, 149, 0.22); border: 2px solid #818cf8; margin-bottom:20px; object-fit:cover; max-height:380px;">
-                <p>For more than <strong>25 years</strong> in Chester, NJ, <strong>Grand Master Jeon</strong> has dedicated his life to helping students build physical strength, sharp focus, and unshakable self-confidence through authentic Taekwondo instruction. Honored as the <strong>Best Referee at the Pan Am International Championships in Las Vegas</strong> and awarded prestigious <strong>Citations for Excellence from Kukkiwon World Taekwondo Headquarters and the World Taekwondo Federation</strong>, he brings world-renowned mastery and patient, encouraging mentorship to every class.</p>
-                <p>At <strong>A Plus Grand Master Jeon Taekwondo</strong>, every lesson blends traditional Korean martial arts values—courtesy, integrity, perseverance, and self-control—with modern coaching tailored to each student's individual pace.</p>
-                <div class="unlimited-banner">
-                    <h4 style="margin:0 0 6px 0; color:#ffd700;">🥋 6-Week Trial Program &amp; Unlimited Classes</h4>
-                    <p style="margin:0; font-size:0.95rem;">Experience our dojang with a <strong>Free Trial Class</strong>! Enroll in our <strong>6-Week Trial Program</strong> afterward and receive a <strong>Free Official Taekwondo Uniform</strong> plus <strong>Unlimited Classes</strong> so you can train as often as your schedule allows.</p>
-                </div>
-            </div>
-            <div class="master-card">
-                <h3 style="margin-top:0; color:#4c1d95;">World-Class Credentials &amp; Awards</h3>
-                <ul>
-                    <li><strong>7th-Degree Certified Black Belt:</strong> Master-level expertise in traditional forms, Olympic sparring, self-defense, and board breaking.</li>
-                    <li><strong>Pan Am Best Referee Award:</strong> Honored with the <em>Best Referee Award</em> at the <em>Pan Am International Championships in Las Vegas</em>.</li>
-                    <li><strong>Kukkiwon &amp; World Taekwondo Honors:</strong> Recipient of <em>Citation for Excellence Awards</em> from both <em>Kukkiwon Taekwondo Headquarters</em> and the <em>World Taekwondo Federation</em>.</li>
-                    <li><strong>University &amp; Military Instructor:</strong> Former Taekwondo Instructor at <em>Princeton University</em> and the <em>U.S. Army Military Academy at West Point</em>.</li>
-                    <li><strong>Championship Coaching:</strong> Former Head Coach for the New Jersey State National Championships Team.</li>
-                    <li><strong>Chester Community Pillar for Over 25 Years:</strong> Trusted by families across Chester, Mendham, Long Valley, Far Hills, and Randolph.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <div class="bg-light">
-        <section id="programs" class="section">
-            <div class="section-title">
-                <h2>Our Programs</h2>
-                <div class="underline"></div>
-                <p><strong>We separate our group classes by both ages and experience levels</strong>—and also offer <strong>1-on-1 Private Lessons for all ages and all levels</strong>—so every student learns safely at the right pace.</p>
-            </div>
-            <div class="grid-2">
-                <div class="card">
-                    <h3 style="color:#1e1b4b;">Little Tigers</h3>
-                    <div class="age-tag">Ages 4 – 6 &bull; Grouped by Level</div>
-                    <p>Engaging classes designed to build balance, coordination, listening habits, focus, and respect in a fun, structured setting.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color:#1e1b4b;">Children &amp; Teens</h3>
-                    <div class="age-tag">Ages 7+ &bull; Grouped by Age &amp; Rank</div>
-                    <p>Build bully-defense confidence, physical agility, goal-setting through belt rank progression, and Olympic-style Taekwondo skills.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color:#1e1b4b;">Adults &amp; Family</h3>
-                    <div class="age-tag">Beginner to Black Belt</div>
-                    <p>High-energy fitness, stress relief, flexibility, and practical self-defense. Train solo or alongside your children with unlimited classes.</p>
-                </div>
-                <div class="card" style="border-top: 4px solid #2563eb; background: linear-gradient(145deg, #ffffff 0%, #eff6ff 50%, #f3e8ff 100%);">
-                    <h3 style="color:#1e1b4b;">1-on-1 Private Lessons</h3>
-                    <div class="age-tag" style="background:linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); color:white; border:none;">All Ages &bull; All Levels &bull; 30 or 50 Min</div>
-                    <p>We can customize a program to meet each student's needs! Choose between <strong>30-minute or 50-minute per-session options</strong> for personalized 1-on-1 coaching with Grand Master Jeon.</p>
-                    <p style="font-size:0.9rem; margin-bottom:14px;">For more info, please <a href="mailto:njchestertkd@gmail.com?subject=Private%20Lesson%20Inquiry%20-%20A%20Plus%20Taekwondo" style="color:#4f46e5; font-weight:bold;">send us an email</a> or submit a request below.</p>
-                    <a href="mailto:njchestertkd@gmail.com?subject=Private%20Lesson%20Inquiry%20-%20A%20Plus%20Taekwondo" class="shop-btn">Email About Private Lessons</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section id="schedule" class="section">
-        <div class="section-title">
-            <h2>Class Schedule &amp; Group Placement</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="schedule-box">
-            <h3 style="color:#1e1b4b;">Tailored Class Groups &amp; Custom Private Sessions</h3>
-            <p>To give every student the best possible instruction, <strong>we separate our groups by both ages and experience levels</strong> (from first-time beginners to advanced black belts), and offer customized <strong>30-minute or 50-minute 1-on-1 private sessions</strong>. Please reach out to us for more information and we will match you or your child with the ideal schedule!</p>
-            <div class="schedule-badges">
-                <span class="sched-pill">🥋 Separated by Age Group</span>
-                <span class="sched-pill">⭐ Separated by Experience &amp; Belt Level</span>
-                <span class="sched-pill">♾️ Unlimited Group Classes</span>
-                <span class="sched-pill">🎯 Custom 30 &amp; 50-Min Private Lessons</span>
-            </div>
-            <div class="hero-buttons">
-                <a href="#signup" class="btn">Reach Out For Schedule Details</a>
-                <a href="tel:9088797721" class="btn" style="background:linear-gradient(135deg, #0f172a 0%, #312e81 100%);">Call / Text: 908-879-7721</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="bg-light">
-        <section id="shop" class="section">
-            <div class="section-title">
-                <h2>Dojang Pro Shop &amp; Gear</h2>
-                <div class="underline"></div>
-                <p>Official uniforms, custom dojang apparel, and martial arts training equipment available directly at our Chester school.</p>
-            </div>
-            <div class="shop-grid">
-                <div class="shop-item">
-                    <div class="shop-icon-box">🥋<span>Official Uniform</span></div>
-                    <div style="padding:18px;">
-                        <h3 style="color:#1e1b4b;">Taekwondo Uniform (Dobok)</h3>
-                        <p style="font-size:0.9rem; color:#475569;">Durable white &amp; black-collar uniforms with official school patch in all youth and adult sizes.</p>
-                        <a href="#signup" class="shop-btn">Reserve / Inquire</a>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-icon-box">👕<span>Apparel</span></div>
-                    <div style="padding:18px;">
-                        <h3 style="color:#1e1b4b;">Official Dojang T-Shirts</h3>
-                        <p style="font-size:0.9rem; color:#475569;">Breathable cotton &amp; performance training tees featuring the A Plus Grand Master Jeon Taekwondo logo.</p>
-                        <a href="#signup" class="shop-btn">Reserve / Inquire</a>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-icon-box">🧥<span>Outerwear</span></div>
-                    <div style="padding:18px;">
-                        <h3 style="color:#1e1b4b;">Team Hoodies &amp; Jackets</h3>
-                        <p style="font-size:0.9rem; color:#475569;">Warm pullover hoodies and zip-up warm-up jackets for cold NJ mornings and tournament travel.</p>
-                        <a href="#signup" class="shop-btn">Reserve / Inquire</a>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-icon-box">🎯<span>Training Gear</span></div>
-                    <div style="padding:18px;">
-                        <h3 style="color:#1e1b4b;">Kicking Targets &amp; Pads</h3>
-                        <p style="font-size:0.9rem; color:#475569;">Hand-held double kicking paddles, kick shields, and focus mitts for home practice and speed drills.</p>
-                        <a href="#signup" class="shop-btn">Reserve / Inquire</a>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-icon-box">⚔️<span>Weapons</span></div>
-                    <div style="padding:18px;">
-                        <h3 style="color:#1e1b4b;">Foam Training Nunchucks</h3>
-                        <p style="font-size:0.9rem; color:#475569;">Safe, padded cord and chain nunchucks for coordination, forms training, and weapons workshops.</p>
-                        <a href="#signup" class="shop-btn">Reserve / Inquire</a>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-icon-box">🛡️<span>Protection</span></div>
-                    <div style="padding:18px;">
-                        <h3 style="color:#1e1b4b;">Sparring Gear &amp; Bags</h3>
-                        <p style="font-size:0.9rem; color:#475569;">Full protective sparring sets (headgear, chest guard, shin/forearm guards) and custom gear bags.</p>
-                        <a href="#signup" class="shop-btn">Reserve / Inquire</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section id="gallery" class="section">
-        <div class="section-title">
-            <h2>Dojang Photo &amp; Video Gallery</h2>
-            <div class="underline"></div>
-            <p>Highlights from Grand Master Jeon's classes, belt promotion ceremonies, and student achievements.</p>
-        </div>
-
-        <div style="max-width:850px; margin:0 auto 35px auto; background:#0f172a; border-radius:10px; overflow:hidden; box-shadow: 0 10px 28px rgba(76, 29, 149, 0.28); border: 2px solid #7c3aed;">
-            <video controls playsinline style="width:100%; max-height:480px; display:block; margin:0 auto;">
-                <source src="VID_20250203_194409_298.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div style="padding:14px 20px; color:white; font-weight:600; text-align:center; background:linear-gradient(90deg, #1e3a8a 0%, #5b21b6 100%); border-top: 1px solid #ffd700;">
-                🎬 Dojang Training &amp; Class Action at A Plus Grand Master Jeon Taekwondo
-            </div>
-        </div>
-
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img src="unnamed.webp" alt="A Plus Grand Master Jeon Taekwondo Training">
-                <div class="gallery-caption">A Plus Grand Master Jeon Taekwondo</div>
-            </div>
-            <div class="gallery-card">
-                <img src="3.webp" alt="Chester NJ Taekwondo Classes">
-                <div class="gallery-caption">Discipline, Focus &amp; Martial Arts Training</div>
-            </div>
-            <div class="gallery-card">
-                <img src="JEONS-TKD-FINAL.jpg" alt="Black Belt Achievement">
-                <div class="gallery-caption">Belt Testing &amp; Black Belt Milestones</div>
-            </div>
-        </div>
-
-        <div style="text-align:center; margin-top:30px;">
-            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener" class="btn">
-                📸 See More Photos &amp; Videos on Instagram (@masterjeonstkd)
-            </a>
-        </div>
-    </section>
-
-    <div class="bg-dark">
-        <section id="reviews" class="section">
-            <div class="section-title">
-                <h2>What Our Students &amp; Parents Say</h2>
-                <div class="underline"></div>
-                <p>Real 5-star Google reviews from families and students in our Chester, NJ community.</p>
-            </div>
-            <div class="grid-3">
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f1f5f9;">"Master Jeon is an exceptional teacher and is great with kids. Our five year old son loves the class, and within the first few months we can already see he has matured and developed both physically and in character. I may have learned a few skills for parenting too by watching how Master Jeon teaches :)"</p>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#ffffff;">— Paul Gugger</div>
-                        <div class="google-badge">✓ Verified Google Review</div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f1f5f9;">"My son (7yrs) has been taking classes with Master Jeon for a few months now and he loves it. He is learning focus, he is gaining confidence and getting a great work out. I cannot recommend Master Jeon enough. I am revising my review because my son is now 10. He has been working with Master Jeon for a few years and I have to say that this place is still doing wonders for my son. He seems strong not only physically but also mentally. He practices taekwondo with a great community of students of different sizes, ages, needs and backgrounds. These kids seem to want to help each other thrive and that way of thinking is because of Master Jeon."</p>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#ffffff;">— Melissa Wojcik</div>
-                        <div class="google-badge">✓ Verified Google Review</div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f1f5f9;">"Two years ago my daughter walked through the door into Master Jeon’s Tae Kwon Do. It was quite simply the best thing we have done for her - she is more fit, brave, persistent, and self confident than before. Being a student with Master Jeon means you learn TKD from the best. Master adapts his teaching perfectly to suit different ages and abilities. Hard work and perseverance is rewarded with respect (and belts when the time is right). The school is a ‘family’ and Master Jeon cares enough to teach kids how to be good people, keep safe and do the right thing. Over the last month we have, sadly, moved out of state and I can honestly say Master Jeon set the bar very high for us to find a new school that came close. We have now settled with a new school and the Master there is full of praise for my daughter’s technique and dedication - all things she developed with Master Jeon."</p>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#ffffff;">— F. Charlesworth</div>
-                        <div class="google-badge">✓ Verified Google Review</div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f1f5f9;">"Master Jeon exhibits all the qualities of an excellent instructor: skill, discipline, devotion, patience and an impressive resume. If your children (or you -- there's a great adult class) are interested in TKD, you should definitely check out Master Jeon's Tae Kwon Do."</p>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#ffffff;">— J. Donohue</div>
-                        <div class="google-badge">✓ Verified Google Review</div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f1f5f9;">"Our daughters have been taking Tae Kwon Do with Master Jeon for several years. It has been life changing for them in terms of building self confidence, character, and discipline. Master Jeon is incredible with kids, pushing them to grow their abilities but also having a great sense of humor when the moment calls for it. I couldn't recommend Master Jeon and A Plus Tae Kwon Do any more strongly."</p>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#ffffff;">— Dan G.</div>
-                        <div class="google-badge">✓ Verified Google Review</div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div>
-                        <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f1f5f9;">"When my son was 8, he was having issues with becoming explosive, and it was becoming more and more frequent. We decided to give Tae Kwon Do a chance. Master Jeon taught my son discipline, self awareness, respect and the love for Martial Art."</p>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#ffffff;">— J. Todd</div>
-                        <div class="google-badge">✓ Verified Google Review</div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align:center; margin-top:35px;">
-                <a href="https://www.google.com/search?q=A+Plus+Grand+Master+Jeon+Taekwondo+Chester+NJ" target="_blank" rel="noopener" class="btn">
-                    ⭐ Read More Reviews &amp; View Our Google Business Profile
-                </a>
-            </div>
-        </section>
-    </div>
-
-    <section id="signup" class="section">
-        <div class="section-title">
-            <h2>Sign Up For a Free Trial or Request Info</h2>
-            <div class="underline"></div>
-            <p>Reach out online below, email <a href="mailto:njchestertkd@gmail.com" style="color:#4f46e5; font-weight:bold;">njchestertkd@gmail.com</a>, or call <strong>908-879-7721</strong> for group schedules, your <strong>Free Trial Class</strong>, or <strong>30-minute / 50-minute Private Lessons</strong>.</p>
-        </div>
-        <div class="contact-container">
-            <div class="info-card">
-                <div style="margin-bottom:18px;">
-                    <strong style="color:#4c1d95; display:block;">📍 Dojang Location</strong>
-                    23 W. Main St, Chester, NJ 07930<br>
-                    <small>(Convenient Main Street location with parking)</small><br>
-                    <a href="https://www.google.com/search?q=A+Plus+Grand+Master+Jeon+Taekwondo+Chester+NJ" target="_blank" rel="noopener" style="color:#1d4ed8; font-weight:bold; text-decoration:none; font-size:0.9rem;">⭐ View Google Business Profile &rarr;</a>
-                </div>
-                <div style="margin-bottom:18px;">
-                    <strong style="color:#4c1d95; display:block;">📞 Call, Text, Email, or Follow Us</strong>
-                    <a href="tel:9088797721" style="color:#1d4ed8; font-size:1.25rem; font-weight:bold; text-decoration:none;">908-879-7721</a><br>
-                    Email: <a href="mailto:njchestertkd@gmail.com" style="color:inherit; font-weight:600;">njchestertkd@gmail.com</a><br>
-                    Instagram: <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener" style="color:#6d28d9; font-weight:bold; text-decoration:none;">@masterjeonstkd</a>
-                </div>
-                <div>
-                    <strong style="color:#4c1d95; display:block; margin-bottom:6px;">🕒 Dojang Hours</strong>
-                    <table class="hours-table">
-                        <tr><td>Monday</td><td>11:30 AM – 7:30 PM</td></tr>
-                        <tr><td>Tuesday</td><td>11:30 AM – 8:30 PM</td></tr>
-                        <tr><td>Wednesday</td><td>11:30 AM – 7:00 PM</td></tr>
-                        <tr><td>Thursday</td><td>11:30 AM – 8:30 PM</td></tr>
-                        <tr><td>Friday</td><td>11:30 AM – 7:00 PM</td></tr>
-                        <tr><td>Saturday</td><td>9:00 AM – 12:30 PM</td></tr>
-                        <tr><td>Sunday</td><td>Closed</td></tr>
-                    </table>
-                </div>
-                <iframe class="map-frame" src="https://maps.google.com/maps?q=23%20W%20Main%20St,%20Chester,%20NJ%2007930&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <div class="form-box">
-                <h3 style="margin-top:0; color:#4c1d95;">Online Free Trial, Private Lesson &amp; Schedule Inquiry</h3>
-                <p style="font-size:0.95rem; color:#475569;">Tell us the student's age and experience level below so we can match you with the right group, schedule your <strong>Free Trial Class</strong>, or customize a <strong>1-on-1 Private Lesson</strong>!</p>
-                
-                <form action="https://formsubmit.co/njchestertkd@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Website Inquiry - A Plus Grand Master Jeon Taekwondo">
-                    <input type="hidden" name="_captcha" value="false">
-                    <div class="form-group">
-                        <label>Student Name *</label>
-                        <input type="text" name="Student Name" placeholder="First &amp; Last Name" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Student Age *</label>
-                            <input type="text" name="Student Age" placeholder="e.g., 6, 10, Adult" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Experience Level *</label>
-                            <select name="Experience Level">
-                                <option value="Beginner (No Prior Experience)">Beginner (No Experience)</option>
-                                <option value="Some Experience / Color Belt">Some Experience / Color Belt</option>
-                                <option value="Advanced / Black Belt">Advanced / Black Belt</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" name="Phone" placeholder="908-555-0123" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address *</label>
-                            <input type="email" name="Email" placeholder="you@example.com" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Program / Request *</label>
-                            <select name="Program">
-                                <option value="Free Trial - Little Tigers (Ages 4-6)">Free Trial — Little Tigers (Ages 4–6)</option>
-                                <option value="Free Trial - Kids & Teens (Ages 7+)">Free Trial — Kids &amp; Teens (Ages 7+)</option>
-                                <option value="Free Trial - Adult Taekwondo">Free Trial — Adult Taekwondo</option>
-                                <option value="Private Lesson - 30-Minute Session (All Ages & Levels)">Private Lesson — 30-Minute Session (All Ages &amp; Levels)</option>
-                                <option value="Private Lesson - 50-Minute Session (All Ages & Levels)">Private Lesson — 50-Minute Session (All Ages &amp; Levels)</option>
-                                <option value="Schedule & Pricing Information">Schedule &amp; Pricing Information</option>
-                                <option value="Pro Shop Gear Inquiry">Pro Shop Gear Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Preferred Days</label>
-                            <input type="text" name="Preferred Days" placeholder="e.g., Mon/Wed or Saturdays">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Questions or Custom Training Goals</label>
-                        <textarea name="Message" rows="3" placeholder="Tell us about your goals, 30-min or 50-min private lesson preferences, or questions about class times..."></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width:100%;">Submit Request</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p style="color:white; font-weight:bold; font-size:1.05rem; margin-bottom:6px;">A Plus Grand Master Jeon Taekwondo</p>
-        <p style="margin:4px 0;">
-            23 W. Main St, Chester, NJ 07930 &bull;
-            <a href="tel:9088797721" style="color:var(--gold); text-decoration:none;">908-879-7721</a> &bull;
-            <a href="mailto:njchestertkd@gmail.com" style="color:var(--gold); text-decoration:none;">njchestertkd@gmail.com</a> &bull;
-            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Instagram: @masterjeonstkd</a> &bull;
-            <a href="https://www.google.com/search?q=A+Plus+Grand+Master+Jeon+Taekwondo+Chester+NJ" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Google Reviews</a>
-        </p>
-        <p style="margin-top:12px; font-size:0.82rem;">&copy; 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
