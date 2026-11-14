@@ -50,6 +50,8 @@
         .news-card { background: white; border: 1px solid #e5e5e5; border-left: 5px solid var(--secondary); border-radius: 8px; padding: 25px; }
         .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: center; }
         .master-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-left: 5px solid var(--primary); }
+        .master-card ul { padding-left: 20px; margin: 0; }
+        .master-card li { margin-bottom: 12px; }
         .unlimited-banner { background: var(--primary); color: white; padding: 22px; border-radius: 8px; margin-top: 20px; text-align: center; }
         .card { background: white; padding: 28px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--primary); }
         .age-tag { display: inline-block; background: #eee; color: #444; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; }
@@ -61,7 +63,6 @@
         .shop-icon-box { background: #222; color: white; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.2rem; }
         .shop-icon-box span { font-size: 0.78rem; text-transform: uppercase; margin-top: 6px; color: var(--gold); font-weight: bold; }
         .shop-btn { display: inline-block; padding: 8px 16px; background: var(--dark); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
-        .video-wrapper { max-width: 850px; margin: 0 auto 35px auto; background: #111; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
         .gallery-card { position: relative; border-radius: 8px; overflow: hidden; height: 240px; background: #222; display: flex; align-items: center; justify-content: center; }
         .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -89,7 +90,7 @@
 <body>
     <div class="top-bar">
         <div>📍 23 W. Main St, Chester, NJ 07930 &nbsp;|&nbsp; <span class="promo-pill">6-WEEK TRIAL PROGRAM + UNLIMITED CLASSES</span></div>
-        <div>📞 Call / Text: <a href="tel:9088797721">908-879-7721</a></div>
+        <div>📞 Call / Text: <a href="tel:9088797721">908-879-7721</a> &nbsp;|&nbsp; 📸 <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener">@masterjeonstkd</a></div>
     </div>
 
     <header>
@@ -98,13 +99,14 @@
             <h1><span>A Plus</span> Grand Master Jeon Taekwondo</h1>
         </div>
         <nav>
-            <a href="#news">News &amp; Promos</a>
+            <a href="#news">News & Promos</a>
             <a href="#master">Grand Master Jeon</a>
             <a href="#programs">Programs</a>
             <a href="#schedule">Schedule</a>
             <a href="#shop">Pro Shop</a>
             <a href="#gallery">Gallery</a>
             <a href="#reviews">Reviews</a>
+            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener">Instagram</a>
             <a href="#signup" class="nav-cta">Sign Up: Free Trial</a>
         </nav>
     </header>
@@ -125,7 +127,7 @@
     <div class="bg-light">
         <section id="news" class="section">
             <div class="section-title">
-                <h2>Monthly News &amp; Special Promotions</h2>
+                <h2>Monthly News & Special Promotions</h2>
                 <div class="underline"></div>
                 <p>Check out our introductory trial offers, belt testing updates, and upcoming dojang events.</p>
             </div>
@@ -142,8 +144,8 @@
                     <p>Students preparing for their next belt rank should confirm their stripe requirements with Grand Master Jeon during class. Extra practice sessions are included with all Unlimited Class memberships.</p>
                 </div>
                 <div class="news-card">
-                    <span style="color:var(--secondary); font-weight:bold; font-size:0.85rem;">❄️ SEASONAL SCHEDULE &amp; GEAR</span>
-                    <h3>Holiday Schedule &amp; Winter Gear</h3>
+                    <span style="color:var(--secondary); font-weight:bold; font-size:0.85rem;">❄️ SEASONAL SCHEDULE & GEAR</span>
+                    <h3>Holiday Schedule & Winter Gear</h3>
                     <p>Please check the dojang bulletin board for holiday class hours later this month. Cold-weather team hoodies, zip-up jackets, and kicking targets are now stocked in the Pro Shop!</p>
                 </div>
             </div>
@@ -158,20 +160,22 @@
         <div class="master-grid">
             <div>
                 <img src="Master%20Jeon%20Demo.jpg" alt="Grand Master Jeon Taekwondo Demonstration" style="width:100%; border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-bottom:20px; object-fit:cover; max-height:380px;">
-                <p>For more than two decades in Chester, NJ, <strong>Grand Master Jeon</strong> has dedicated his life to helping students build physical strength, sharp focus, and unshakable self-confidence through authentic Taekwondo instruction.</p>
-                <p>At <strong>A Plus Grand Master Jeon Taekwondo</strong>, every class combines traditional Korean martial arts values—courtesy, integrity, perseverance, and self-control—with modern, encouraging coaching tailored to each student's pace.</p>
+                <p>For <strong>25 years</strong> in Chester, NJ, <strong>Grand Master Jeon</strong> has dedicated his life to helping students build physical strength, sharp focus, and unshakable self-confidence through authentic Taekwondo instruction. Recognized with prestigious <strong>Citations for Excellence from Kukkiwon World Taekwondo Headquarters and the World Taekwondo Federation</strong>—as well as the <strong>Best Referee Award at the Pan Am International Championships in Las Vegas</strong>—he brings world-class pedigree and patient, encouraging mentorship to every class.</p>
+                <p>At <strong>A Plus Grand Master Jeon Taekwondo</strong>, every lesson blends traditional Korean martial arts values—courtesy, integrity, perseverance, and self-control—with modern coaching tailored to each student's individual pace.</p>
                 <div class="unlimited-banner">
                     <h4 style="margin:0 0 6px 0;">🥋 6-Week Trial Program &amp; Unlimited Classes</h4>
                     <p style="margin:0; font-size:0.95rem;">Experience our dojang with a <strong>Free Trial Class</strong>! Enroll in our <strong>6-Week Trial Program</strong> afterward and receive a <strong>Free Official Taekwondo Uniform</strong> plus <strong>Unlimited Classes</strong> so you can train as often as your schedule allows.</p>
                 </div>
             </div>
             <div class="master-card">
-                <h3 style="margin-top:0; color:var(--primary);">World-Class Credentials &amp; Experience</h3>
+                <h3 style="margin-top:0; color:var(--primary);">World-Class Credentials &amp; Awards</h3>
                 <ul>
                     <li><strong>7th-Degree Certified Black Belt:</strong> Master-level expertise in traditional forms, Olympic sparring, self-defense, and board breaking.</li>
-                    <li><strong>University &amp; Military Instructor:</strong> Former Taekwondo Instructor at <em>Princeton University</em> and the <em>U.S. Military Academy at West Point</em>.</li>
+                    <li><strong>Kukkiwon &amp; World Taekwondo Honors:</strong> Recipient of <em>Citation for Excellence Awards</em> from both <strong>Kukkiwon World Taekwondo Headquarters</strong> and the <strong>World Taekwondo Federation</strong>.</li>
+                    <li><strong>Pan Am Best Referee Award:</strong> Honored as <strong>Best Referee</strong> at the <em>Pan Am International Championships</em> in Las Vegas for elite officiating and sportsmanship.</li>
+                    <li><strong>University &amp; U.S. Army Military Instructor:</strong> Former Taekwondo Instructor at <em>Princeton University</em> and the <em>U.S. Army Military Academy at West Point</em>.</li>
                     <li><strong>Championship Coaching:</strong> Head Coach for the New Jersey State National Championships Team.</li>
-                    <li><strong>Chester Community Pillar Since 2002:</strong> Trusted by families across Chester, Mendham, Long Valley, Far Hills, and Randolph.</li>
+                    <li><strong>25 Years in the Chester Community:</strong> Trusted by families across Chester, Mendham, Long Valley, Far Hills, and Randolph for a quarter century.</li>
                 </ul>
             </div>
         </div>
@@ -191,12 +195,12 @@
                     <p>Engaging classes designed to build balance, coordination, listening habits, focus, and respect in a fun, structured setting.</p>
                 </div>
                 <div class="card">
-                    <h3>Children &amp; Teens</h3>
+                    <h3>Children & Teens</h3>
                     <div class="age-tag">Ages 7+ &bull; Grouped by Age &amp; Rank</div>
                     <p>Build bully-defense confidence, physical agility, goal-setting through belt rank progression, and Olympic-style Taekwondo skills.</p>
                 </div>
                 <div class="card">
-                    <h3>Adults &amp; Family</h3>
+                    <h3>Adults & Family</h3>
                     <div class="age-tag">Beginner to Black Belt</div>
                     <p>High-energy fitness, stress relief, flexibility, and practical self-defense. Train solo or alongside your children with unlimited classes.</p>
                 </div>
@@ -206,7 +210,7 @@
 
     <section id="schedule" class="section">
         <div class="section-title">
-            <h2>Class Schedule &amp; Group Placement</h2>
+            <h2>Class Schedule & Group Placement</h2>
             <div class="underline"></div>
         </div>
         <div class="schedule-box">
@@ -227,7 +231,7 @@
     <div class="bg-light">
         <section id="shop" class="section">
             <div class="section-title">
-                <h2>Dojang Pro Shop &amp; Gear</h2>
+                <h2>Dojang Pro Shop & Gear</h2>
                 <div class="underline"></div>
                 <p>Official uniforms, custom dojang apparel, and martial arts training equipment available directly at our Chester school.</p>
             </div>
@@ -236,7 +240,7 @@
                     <div class="shop-icon-box">🥋<span>Official Uniform</span></div>
                     <div style="padding:18px;">
                         <h3>Taekwondo Uniform (Dobok)</h3>
-                        <p style="font-size:0.9rem; color:#555;">Durable white &amp; black-collar uniforms with official school patch in all youth and adult sizes.</p>
+                        <p style="font-size:0.9rem; color:#555;">Durable white & black-collar uniforms with official school patch in all youth and adult sizes.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
@@ -244,14 +248,14 @@
                     <div class="shop-icon-box">👕<span>Apparel</span></div>
                     <div style="padding:18px;">
                         <h3>Official Dojang T-Shirts</h3>
-                        <p style="font-size:0.9rem; color:#555;">Breathable cotton &amp; performance training tees featuring the A Plus Grand Master Jeon Taekwondo logo.</p>
+                        <p style="font-size:0.9rem; color:#555;">Breathable cotton & performance training tees featuring the A Plus Grand Master Jeon Taekwondo logo.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
                 <div class="shop-item">
                     <div class="shop-icon-box">🧥<span>Outerwear</span></div>
                     <div style="padding:18px;">
-                        <h3>Team Hoodies &amp; Jackets</h3>
+                        <h3>Team Hoodies & Jackets</h3>
                         <p style="font-size:0.9rem; color:#555;">Warm pullover hoodies and zip-up warm-up jackets for cold NJ mornings and tournament travel.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
@@ -259,7 +263,7 @@
                 <div class="shop-item">
                     <div class="shop-icon-box">🎯<span>Training Gear</span></div>
                     <div style="padding:18px;">
-                        <h3>Kicking Targets &amp; Pads</h3>
+                        <h3>Kicking Targets & Pads</h3>
                         <p style="font-size:0.9rem; color:#555;">Hand-held double kicking paddles, kick shields, and focus mitts for home practice and speed drills.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
@@ -275,7 +279,7 @@
                 <div class="shop-item">
                     <div class="shop-icon-box">🛡️<span>Protection</span></div>
                     <div style="padding:18px;">
-                        <h3>Sparring Gear &amp; Bags</h3>
+                        <h3>Sparring Gear & Bags</h3>
                         <p style="font-size:0.9rem; color:#555;">Full protective sparring sets (headgear, chest guard, shin/forearm guards) and custom gear bags.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
@@ -291,7 +295,7 @@
             <p>Highlights from Grand Master Jeon's university and military instruction, Chester classes, and student milestones.</p>
         </div>
 
-        <div class="video-wrapper">
+        <div style="max-width:850px; margin:0 auto 35px auto; background:#111; border-radius:8px; overflow:hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.18);">
             <video controls playsinline style="width:100%; max-height:480px; display:block; margin:0 auto;">
                 <source src="VID_20250203_194409_298.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -315,12 +319,16 @@
                 <div class="gallery-caption">Belt Testing &amp; Black Belt Milestones</div>
             </div>
         </div>
+
+        <div style="text-align:center; margin-top:30px;">
+            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener" class="btn" style="background:var(--dark);">📸 Follow @masterjeonstkd on Instagram</a>
+        </div>
     </section>
 
     <div class="bg-dark">
         <section id="reviews" class="section">
             <div class="section-title">
-                <h2>What Our Students &amp; Parents Say</h2>
+                <h2>What Our Students & Parents Say</h2>
                 <div class="underline"></div>
             </div>
             <div class="grid-3">
@@ -359,7 +367,8 @@
                 <div style="margin-bottom:18px;">
                     <strong style="color:var(--primary); display:block;">📞 Call or Text Directly</strong>
                     <a href="tel:9088797721" style="color:var(--primary); font-size:1.25rem; font-weight:bold; text-decoration:none;">908-879-7721</a><br>
-                    Email: <a href="mailto:njchestertkd@gmail.com" style="color:inherit;">njchestertkd@gmail.com</a>
+                    Email: <a href="mailto:njchestertkd@gmail.com" style="color:inherit;">njchestertkd@gmail.com</a><br>
+                    Instagram: <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener" style="color:var(--primary); font-weight:bold; text-decoration:none;">@masterjeonstkd</a>
                 </div>
                 <div>
                     <strong style="color:var(--primary); display:block; margin-bottom:6px;">🕒 Dojang Hours</strong>
@@ -416,9 +425,9 @@
                             <label>Program / Request *</label>
                             <select name="Program">
                                 <option value="Free Trial - Little Tigers (Ages 4-6)">Free Trial — Little Tigers (Ages 4–6)</option>
-                                <option value="Free Trial - Kids & Teens (Ages 7+)">Free Trial — Kids &amp; Teens (Ages 7+)</option>
+                                <option value="Free Trial - Kids & Teens (Ages 7+)">Free Trial — Kids & Teens (Ages 7+)</option>
                                 <option value="Free Trial - Adult Taekwondo">Free Trial — Adult Taekwondo</option>
-                                <option value="Schedule & Pricing Information">Schedule &amp; Pricing Information</option>
+                                <option value="Schedule & Pricing Information">Schedule & Pricing Information</option>
                                 <option value="Pro Shop Gear Inquiry">Pro Shop Gear Inquiry</option>
                             </select>
                         </div>
@@ -439,7 +448,7 @@
 
     <footer>
         <p style="color:white; font-weight:bold; font-size:1.05rem; margin-bottom:6px;">A Plus Grand Master Jeon Taekwondo</p>
-        <p style="margin:4px 0;">23 W. Main St, Chester, NJ 07930 &bull; <a href="tel:9088797721" style="color:var(--gold); text-decoration:none;">908-879-7721</a> &bull; <a href="mailto:njchestertkd@gmail.com" style="color:var(--gold); text-decoration:none;">njchestertkd@gmail.com</a></p>
+        <p style="margin:4px 0;">23 W. Main St, Chester, NJ 07930 &bull; <a href="tel:9088797721" style="color:var(--gold); text-decoration:none;">908-879-7721</a> &bull; <a href="mailto:njchestertkd@gmail.com" style="color:var(--gold); text-decoration:none;">njchestertkd@gmail.com</a> &bull; <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">Instagram: @masterjeonstkd</a></p>
         <p style="margin-top:12px; font-size:0.82rem;">&copy; 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
     </footer>
 </body>
