@@ -3,86 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Plus Grand Master Jeon Taekwondo | Chester, NJ</title>
-    <style>
+       <style>
         :root {
-            --bts-purple-deep: #240046;
-            --bts-purple: #5a189a;
-            --bts-violet: #7b2cbf;
-            --bts-orchid: #9d4edd;
-            --bts-lilac: #e0aaff;
-            --royal-blue: #1d4ed8;
-            --electric-blue: #3b82f6;
-            --gold-bright: #fde047;
-            --gold-mid: #f59e0b;
-            --gold-deep: #b45309;
-            --dark: #10002b;
-            --light: #f5f0ff;
-            --text: #1f1235;
+            --primary: #d50000;
+            --primary-dark: #8e0000;
+            --secondary: #1565c0;
+            --royal-blue: #1e40af;
+            --gold: #ffd700;
+            --gold-shine: linear-gradient(135deg, #fff3a1 0%, #ffd700 45%, #d4af37 75%, #fff099 100%);
+            --navy-shine: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #172554 100%);
+            --card-shine: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #1e293b;
         }
         * { box-sizing: border-box; scroll-behavior: smooth; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text);
-            line-height: 1.6;
-            background: #faf7ff;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; background: #ffffff; }
+        .top-bar { background: #0f172a; color: #f8fafc; font-size: 0.85rem; padding: 9px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255, 215, 0, 0.35); }
+        .top-bar a { color: var(--gold); text-decoration: none; font-weight: bold; }
+        .top-bar a:hover { text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); }
+        .promo-pill { background: var(--primary); color: white; padding: 3px 12px; border-radius: 12px; font-weight: bold; font-size: 0.8rem; box-shadow: 0 2px 8px rgba(213, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.25); }
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.35); border-bottom: 2px solid var(--gold); flex-wrap: wrap; }
+        header h1 { margin: 0; font-size: 1.3rem; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.45); }
+        header h1 span { background: var(--gold-shine); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+        nav a { color: #f1f5f9; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.25s ease; }
+        nav a:hover { color: var(--gold); text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
+        .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(213, 0, 0, 0.35); border: 1px solid rgba(255, 215, 0, 0.5); }
+        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .hero { background: linear-gradient(135deg, rgba(15, 23, 42, 0.72) 0%, rgba(30, 58, 138, 0.65) 100%), url('Master%20Jeon%20final%20proof.jpeg') no-repeat center center/cover; min-height: 68vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 55px 20px; position: relative; border-bottom: 3px solid var(--gold); }
+        .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
+        .badge { background: var(--secondary); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 12px rgba(21, 101, 192, 0.4); border: 1px solid rgba(255, 255, 255, 0.35); }
+        .badge-gold { background: var(--gold-shine); color: #111827; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.45); border: 1px solid #fff; }
+        .hero h2 { font-size: 2.7rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 860px; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65); letter-spacing: 0.5px; }
+        .hero p { font-size: 1.15rem; margin-bottom: 28px; max-width: 680px; color: #f8fafc; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        .btn { background: var(--primary); color: white; padding: 14px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; border: 1px solid rgba(255, 215, 0, 0.45); cursor: pointer; font-size: 0.95rem; box-shadow: 0 6px 16px rgba(213, 0, 0, 0.35); transition: all 0.3s ease; }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(213, 0, 0, 0.45); }
+        .btn-outline { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(4px); border: 2px solid var(--gold); color: white; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); }
+        .btn-outline:hover { background: var(--gold-shine); color: #111827; }
+        .section { padding: 65px 20px; max-width: 1150px; margin: 0 auto; }
+        .bg-light { background: #f8fafc; }
+        .bg-dark { background: var(--navy-shine); color: white; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2.15rem; margin: 0 0 10px 0; color: #0f172a; }
+        .bg-dark .section-title h2 { color: #ffffff; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); }
+        .section-title p { color: #475569; max-width: 680px; margin: 10px auto 0; }
+        .bg-dark .section-title p { color: #e2e8f0; }
+        .underline { width: 75px; height: 4px; background: linear-gradient(90deg, #1565c0 0%, #d50000 50%, #ffd700 100%); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(213, 0, 0, 0.3); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .promo-card { background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); border: 2px solid #1565c0; border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(15, 23, 42, 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(21, 101, 192, 0.2); }
+        .promo-tag { display: inline-block; background: linear-gradient(135deg, #1565c0 0%, #0f172a 100%); color: white; font-size: 0.78rem; font-weight: bold; text-transform: uppercase; padding: 5px 11px; border-radius: 5px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(21, 101, 192, 0.3); }
+        .news-card { background: var(--card-shine); border: 1px solid #cbd5e1; border-left: 5px solid #1565c0; border-radius: 10px; padding: 25px; box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08); transition: transform 0.25s ease; }
+        .news-card:hover { transform: translateY(-3px); }
+        .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: center; }
+        .master-card { background: var(--card-shine); padding: 30px; border-radius: 10px; box-shadow: 0 8px 26px rgba(15, 23, 42, 0.1); border-left: 5px solid #d50000; border-top: 2px solid #1565c0; }
+        .unlimited-banner { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #991b1b 100%); color: white; padding: 22px; border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.28); border: 1px solid rgba(255, 215, 0, 0.5); }
+        .card { background: var(--card-shine); padding: 28px; border-radius: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1); text-align: center; border-top: 4px solid #d50000; border-bottom: 2px solid #93c5fd; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(21, 101, 192, 0.2); }
+        .age-tag { display: inline-block; background: #eff6ff; color: #1e3a8a; padding: 5px 13px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; border: 1px solid #bfdbfe; }
+        .schedule-box { background: var(--card-shine); border: 2px solid #cbd5e1; border-top: 5px solid #1565c0; border-radius: 10px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 0 auto; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1); }
+        .schedule-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .sched-pill { background: #eff6ff; border: 1px solid #93c5fd; color: #0f172a; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 6px rgba(21, 101, 192, 0.1); }
+        .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .shop-item { background: white; border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 20px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); transition: transform 0.25s ease; }
+        .shop-item:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(21, 101, 192, 0.18); }
+        .shop-icon-box { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); color: white; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.2rem; border-bottom: 2px solid var(--gold); }
+        .shop-icon-box span { font-size: 0.78rem; text-transform: uppercase; margin-top: 6px; color: var(--gold); font-weight: bold; letter-spacing: 0.5px; }
+        .shop-btn { display: inline-block; padding: 9px 18px; background: linear-gradient(135deg, #1e40af 0%, #1565c0 100%); color: white; text-decoration: none; border-radius: 5px; font-size: 0.85rem; font-weight: bold; box-shadow: 0 4px 12px rgba(21, 101, 192, 0.28); }
+        .shop-btn:hover { background: linear-gradient(135deg, #d50000 0%, #8e0000 100%); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
 
-        /* Animated Shimmer Keyframes */
-        @keyframes shineSweep {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 0 18px rgba(157, 78, 221, 0.55), 0 0 32px rgba(59, 130, 246, 0.35); }
-            50% { box-shadow: 0 0 28px rgba(224, 170, 255, 0.85), 0 0 45px rgba(253, 224, 71, 0.45); }
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background: linear-gradient(90deg, #10002b 0%, #3c096c 35%, #1e3a8a 70%, #5a189a 100%);
-            background-size: 200% 200%;
-            animation: shineSweep 10s ease infinite;
-            color: #f3e8ff;
-            font-size: 0.85rem;
-            padding: 9px 22px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            border-bottom: 1px solid rgba(224, 170, 255, 0.4);
-        }
-        .top-bar a { color: var(--gold-bright); text-decoration: none; font-weight: bold; text-shadow: 0 0 8px rgba(253, 224, 71, 0.4); }
-        .top-bar a:hover { color: #ffffff; text-decoration: underline; }
-        .promo-pill {
-            background: linear-gradient(135deg, #fde047 0%, #f59e0b 50%, #fef08a 100%);
-            color: #1a0536;
-            padding: 3px 13px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 0.78rem;
-            letter-spacing: 0.4px;
-            box-shadow: 0 0 14px rgba(253, 224, 71, 0.65);
-        }
-
-        /* Sticky Header */
-        header {
-            background: linear-gradient(135deg, rgba(16, 0, 43, 0.96) 0%, rgba(60, 9, 108, 0.95) 55%, rgba(29, 78, 216, 0.94) 100%);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 0.95rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 25px rgba(90, 24, 154, 0.55);
-            border-bottom: 2px solid var(--bts-orchid);
             flex-wrap: wrap;
         }
         header h1 {
