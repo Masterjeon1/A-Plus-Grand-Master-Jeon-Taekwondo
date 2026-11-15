@@ -75,7 +75,7 @@
          .shop-icon-box span { font-size: 0.78rem; text-transform: uppercase; margin-top: 6px; color: var(--gold); font-weight: bold; letter-spacing: 0.5px; }
          .shop-btn { display: inline-block; padding: 9px 18px; background: linear-gradient(135deg, #1e40af 0%, #1565c0 100%); color: white; text-decoration: none; border-radius: 5px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
          .shop-btn:hover { background: linear-gradient(135deg, #d50000 0%, #8e0000 100%); }
-                           .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
          .gallery-card {
              position: relative;
              border-radius: 16px;
@@ -345,9 +345,9 @@
             <div class="underline"></div>
             <p>Highlights from Grand Master Jeon's classes, student milestones, and daily training in Chester, NJ.</p>
         </div>
+
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; max-width: 960px; margin: 20px auto;">
-        <div class="gallery-grid">
-            <div class="gallery-card">
+                        <div class="gallery-card">
                 <img src="unnamed%20(2).webp" alt="Certified Black Belt Test">
                 <div class="gallery-caption">Certified Black Belt Test</div>
             </div>
@@ -355,11 +355,13 @@
                 <img src="2023-08-19.jpg" alt="Puerto Rico National Team, Pan Am Championships">
                 <div class="gallery-caption">Puerto Rico National Team, Pan Am Championships</div>
             </div>
+        </div>
             <div class="gallery-card">
                 <img src="11169416_1009019465783320_6141996570803873612_o.jpg" alt="Gold Medal Taekwondo Demo Team, Korea">
                 <div class="gallery-caption">Gold Medal Taekwondo Demo Team, Korea</div>
             </div>
-        </div>
+
+        <div class="gallery-grid">
             <div class="gallery-card">
                 <img src="2026-04-10.jpg" alt="A Plus Grand Master Jeon Taekwondo">
                 <div class="gallery-caption">West Point &amp; Royal Military College of Canada (RMC) Taekwondo Team</div>
