@@ -6,33 +6,34 @@
     <title>Class Schedule | A Plus Grand Master Jeon Taekwondo</title>
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e293b; background: #f8fafc; }
-        header { padding: 24px 20px; color: white; text-align: center; background: linear-gradient(135deg, #0f172a, #1e3a8a); border-bottom: 3px solid #ffd700; }
-        header a { color: #ffd700; font-weight: 700; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); background: var(--page-bg); }
+        header { padding: 24px 20px; color: white; text-align: center; background: linear-gradient(135deg, var(--navy), var(--navy-mid)); border-bottom: 3px solid var(--gold); }
+        header a { color: var(--gold); font-weight: 700; }
         h1 { margin: 12px 0 0; }
         main { max-width: 1150px; padding: 35px 20px 60px; margin: auto; }
         .intro { max-width: 800px; margin: 0 auto 30px; text-align: center; }
         .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; align-items: start; }
-        .day { background: white; border: 1px solid #bfdbfe; border-top: 4px solid #2563eb; border-radius: 10px; padding: 20px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); }
-        .day h2 { margin: 0 0 12px; color: #0f172a; }
+        .day { background: white; border: 1px solid var(--border-accent); border-top: 4px solid var(--secondary); border-radius: 10px; padding: 20px; box-shadow: 0 6px 18px rgba(var(--navy-rgb), 0.08); }
+        .day h2 { margin: 0 0 12px; color: var(--navy); }
         .day ul { list-style: none; margin: 0; padding: 0; }
-        .day li { border-top: 1px solid #e2e8f0; padding: 12px 0; }
+        .day li { border-top: 1px solid var(--border); padding: 12px 0; }
         .day li:last-child { padding-bottom: 0; }
         .day li.private { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 10px 12px; margin: 8px 0; }
         .day li.private .time { color: #92400e; }
-        .time { display: block; font-weight: 700; color: #1e40af; }
+        .time { display: block; font-weight: 700; color: var(--royal-blue); }
         .calendar-all { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-        .calendar-all a { display: inline-block; padding: 10px 16px; border-radius: 6px; color: white; background: #1e40af; font-weight: 700; text-decoration: none; }
-        .calendar-all a:hover, .calendar-all a:focus-visible { background: #d50000; }
+        .calendar-all a { display: inline-block; padding: 10px 16px; border-radius: 6px; color: white; background: var(--royal-blue); font-weight: 700; text-decoration: none; }
+        .calendar-all a:hover, .calendar-all a:focus-visible { background: var(--primary); }
         .calendar-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-        .calendar-actions a { display: inline-block; padding: 6px 9px; border: 1px solid #1e40af; border-radius: 5px; color: #1e40af; background: white; font-size: 0.8rem; font-weight: 700; text-decoration: none; }
-        .calendar-actions a:hover, .calendar-actions a:focus-visible { color: white; background: #1e40af; }
-        .notes { margin-top: 30px; padding: 20px; background: #eff6ff; border-radius: 10px; }
+        .calendar-actions a { display: inline-block; padding: 6px 9px; border: 1px solid var(--royal-blue); border-radius: 5px; color: var(--royal-blue); background: white; font-size: 0.8rem; font-weight: 700; text-decoration: none; }
+        .calendar-actions a:hover, .calendar-actions a:focus-visible { color: white; background: var(--royal-blue); }
+        .notes { margin-top: 30px; padding: 20px; background: var(--light-accent); border-radius: 10px; }
         .notes h2 { margin-top: 0; }
-        .notes a { color: #1e40af; font-weight: 700; }
-        footer { padding: 25px 20px; text-align: center; color: #f8fafc; background: #0f172a; }
-        footer a { color: #ffd700; }
+        .notes a { color: var(--royal-blue); font-weight: 700; }
+        footer { padding: 25px 20px; text-align: center; color: var(--light); background: var(--navy); }
+        footer a { color: var(--gold); }
     </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <header>

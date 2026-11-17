@@ -4,30 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-         :root {
-             --primary: #ad2937;
-             --primary-dark: #861e2a;
-             --secondary: #294d60;
-             --royal-blue: #1e3c50;
-             --gold: #c8a96b;
-             --gold-shine: linear-gradient(135deg, #e9d8a6 0%, #c8a96b 45%, #a98548 75%, #e9d8a6 100%);
-             --navy-shine: linear-gradient(135deg, #142332 0%, #203e50 55%, #172d3a 100%);
-             --card-shine: linear-gradient(145deg, #ffffff 0%, #f7f6f1 100%);
-             --dark: #142332;
-             --light: #f7f6f1;
-             --text: #26313a;
-         }
          * { box-sizing: border-box; scroll-behavior: smooth; }
-         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; background: #f7f6f1; }
-         .top-bar { background: #142332; color: #f7f6f1; font-size: 0.85rem; padding: 9px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-         .top-bar a { color: #f7f6f1; text-decoration: none; font-weight: 600; }
-         .top-bar a:hover { text-shadow: 0 0 8px rgba(200, 169, 107, 0.7); }
-         header { background: linear-gradient(135deg, #142332 0%, #203e50 100%); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(20, 35, 50, 0.25); }
+         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: var(--text); line-height: 1.6; background: var(--page-bg); }
+         .top-bar { background: var(--navy); color: var(--light); font-size: 0.85rem; padding: 9px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+         .top-bar a { color: var(--light); text-decoration: none; font-weight: 600; }
+         .top-bar a:hover { text-shadow: 0 0 8px rgba(var(--gold-rgb), 0.7); }
+         header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(var(--navy-rgb), 0.25); }
          header h1 { margin: 0; font-size: 1.45rem; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.45); }
          header h1 span { background: var(--gold-shine); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
          nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
          nav a { color: #f1f5f9; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.25s ease; }
-         nav a:hover { color: var(--gold); text-shadow: 0 0 10px rgba(200, 169, 107, 0.7); }
+         nav a:hover { color: var(--gold); text-shadow: 0 0 10px rgba(var(--gold-rgb), 0.7); }
          .nav-dropdown { position: relative; }
          .nav-dropdown summary { color: #f1f5f9; font-size: 0.88rem; font-weight: 600; cursor: pointer; list-style: none; }
          .nav-dropdown summary::-webkit-details-marker { display: none; }
@@ -35,67 +22,67 @@
          .nav-dropdown[open] summary::after { transform: rotate(180deg); }
          .nav-dropdown summary:hover { color: var(--gold); }
          .nav-dropdown summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 2px; }
-         .nav-dropdown-menu { position: absolute; top: calc(100% + 10px); left: 0; z-index: 1001; display: grid; min-width: 220px; padding: 8px; background: #ffffff; border: 1px solid #d7c79f; border-radius: 8px; box-shadow: 0 10px 24px rgba(20, 35, 50, 0.2); }
-         nav .nav-dropdown-menu a { display: block; padding: 9px 12px; color: #142332; border-radius: 5px; }
-         nav .nav-dropdown-menu a:hover, nav .nav-dropdown-menu a:focus-visible { background: #f2eee3; color: #1e3c50; text-shadow: none; outline: none; }
-         .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(173, 41, 55, 0.25); border: 1px solid rgba(200, 169, 107, 0.5); }
+         .nav-dropdown-menu { position: absolute; top: calc(100% + 10px); left: 0; z-index: 1001; display: grid; min-width: 220px; padding: 8px; background: #ffffff; border: 1px solid var(--border-accent); border-radius: 8px; box-shadow: 0 10px 24px rgba(var(--navy-rgb), 0.2); }
+         nav .nav-dropdown-menu a { display: block; padding: 9px 12px; color: var(--navy); border-radius: 5px; }
+         nav .nav-dropdown-menu a:hover, nav .nav-dropdown-menu a:focus-visible { background: var(--light-accent); color: var(--royal-blue); text-shadow: none; outline: none; }
+         .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25); border: 1px solid rgba(var(--gold-rgb), 0.5); }
          .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
-         .hero { background: linear-gradient(135deg, #142332 0%, #203e50 55%, #1e3c50 100%); min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 70px; text-align: center; }
+         .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--royal-blue) 100%); min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 70px; text-align: center; }
          .hero-copy { max-width: 860px; color: #ffffff; }
          .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
-         .badge { background: var(--secondary); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 12px rgba(41, 77, 96, 0.35); }
-         .badge-gold { background: var(--gold-shine); color: #142332; box-shadow: 0 4px 15px rgba(200, 169, 107, 0.45); border: 1px solid #fff; }
+         .badge { background: var(--secondary); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 12px rgba(var(--secondary-rgb), 0.35); }
+         .badge-gold { background: var(--gold-shine); color: var(--navy); box-shadow: 0 4px 15px rgba(var(--gold-rgb), 0.45); border: 1px solid #fff; }
          .hero h2 { font-size: 2.7rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 860px; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65); letter-spacing: 0.5px; }
-         .hero p { font-size: 1.15rem; margin-bottom: 28px; max-width: 680px; color: #f7f6f1; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
+         .hero p { font-size: 1.15rem; margin-bottom: 28px; max-width: 680px; color: var(--light); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
          .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
          .btn { background: var(--primary); color: white; padding: 14px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; border: 1px solid rgba(255,255,255,0.2); transition: all 0.25s ease; }
-         .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(173, 41, 55, 0.35); }
+         .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.35); }
          .btn-outline { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(4px); border: 2px solid var(--gold); color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
-         .btn-outline:hover { background: var(--gold-shine); color: #142332; }
+         .btn-outline:hover { background: var(--gold-shine); color: var(--navy); }
          .section { padding: 65px 20px; max-width: 1150px; margin: 0 auto; }
-         .bg-light { background: #f7f6f1; }
+         .bg-light { background: var(--light); }
          .bg-dark { background: var(--navy-shine); color: white; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
          .section-title { text-align: center; margin-bottom: 40px; }
-         .section-title h2 { font-size: 2.15rem; margin: 0 0 10px 0; color: #142332; }
+         .section-title h2 { font-size: 2.15rem; margin: 0 0 10px 0; color: var(--navy); }
          .bg-dark .section-title h2 { color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-         .section-title p { color: #53616a; max-width: 680px; margin: 10px auto 0; }
+         .section-title p { color: var(--muted); max-width: 680px; margin: 10px auto 0; }
          .bg-dark .section-title p { color: #e5dfd1; }
-         .underline { width: 75px; height: 4px; background: linear-gradient(90deg, #1e3c50 0%, #294d60 55%, #c8a96b 100%); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(41, 77, 96, 0.2); }
+         .underline { width: 75px; height: 4px; background: linear-gradient(90deg, var(--royal-blue) 0%, var(--secondary) 55%, var(--gold) 100%); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(var(--secondary-rgb), 0.2); }
          .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
          .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-         .promo-card { background: linear-gradient(145deg, #ffffff 0%, #f7f6f1 100%); border: 2px solid #294d60; border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(20, 35, 50, 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
-         .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(41, 77, 96, 0.2); }
-         .promo-tag { display: inline-block; background: linear-gradient(135deg, #294d60 0%, #142332 100%); color: white; font-size: 0.78rem; font-weight: bold; text-transform: uppercase; padding: 7px 12px; border-radius: 12px; margin-bottom: 12px; }
-         .news-card { background: var(--card-shine); border: 1px solid #e2dac6; border-left: 5px solid #294d60; border-radius: 10px; padding: 25px; box-shadow: 0 6px 20px rgba(20, 35, 50, 0.08); transition: transform 0.25s ease; }
+         .promo-card { background: linear-gradient(145deg, #ffffff 0%, var(--light) 100%); border: 2px solid var(--secondary); border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(var(--navy-rgb), 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+         .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(var(--secondary-rgb), 0.2); }
+         .promo-tag { display: inline-block; background: linear-gradient(135deg, var(--secondary) 0%, var(--navy) 100%); color: white; font-size: 0.78rem; font-weight: bold; text-transform: uppercase; padding: 7px 12px; border-radius: 12px; margin-bottom: 12px; }
+         .news-card { background: var(--card-shine); border: 1px solid var(--border); border-left: 5px solid var(--secondary); border-radius: 10px; padding: 25px; box-shadow: 0 6px 20px rgba(var(--navy-rgb), 0.08); transition: transform 0.25s ease; }
          .news-card:hover { transform: translateY(-3px); }
          .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: center; }
-         .master-card { background: var(--card-shine); padding: 30px; border-radius: 10px; box-shadow: 0 8px 26px rgba(20, 35, 50, 0.1); border-left: 5px solid #c8a96b; border-top: 2px solid #294d60; }
-         .unlimited-banner { background: linear-gradient(135deg, #142332 0%, #203e50 60%, #1e3c50 100%); color: white; padding: 22px; border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 12px 24px rgba(20, 35, 50, 0.18); }
-         .card { background: var(--card-shine); padding: 28px; border-radius: 10px; box-shadow: 0 8px 22px rgba(20, 35, 50, 0.1); text-align: center; border-top: 4px solid #294d60; border-bottom: 2px solid #c8a96b; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(41, 77, 96, 0.2); }
-         .age-tag { display: inline-block; background: #f2eee3; color: #203e50; padding: 5px 13px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; border: 1px solid #d7c79f; }
-         .schedule-box { background: var(--card-shine); border: 2px solid #e2dac6; border-top: 5px solid #294d60; border-radius: 10px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 0 auto; box-shadow: 0 10px 26px rgba(20, 35, 50, 0.08); }
+         .master-card { background: var(--card-shine); padding: 30px; border-radius: 10px; box-shadow: 0 8px 26px rgba(var(--navy-rgb), 0.1); border-left: 5px solid var(--gold); border-top: 2px solid var(--secondary); }
+         .unlimited-banner { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--royal-blue) 100%); color: white; padding: 22px; border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 12px 24px rgba(var(--navy-rgb), 0.18); }
+         .card { background: var(--card-shine); padding: 28px; border-radius: 10px; box-shadow: 0 8px 22px rgba(var(--navy-rgb), 0.1); text-align: center; border-top: 4px solid var(--secondary); border-bottom: 2px solid var(--gold); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+         .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(var(--secondary-rgb), 0.2); }
+         .age-tag { display: inline-block; background: var(--light-accent); color: var(--navy-mid); padding: 5px 13px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; border: 1px solid var(--border-accent); }
+         .schedule-box { background: var(--card-shine); border: 2px solid var(--border); border-top: 5px solid var(--secondary); border-radius: 10px; padding: 35px 25px; text-align: center; max-width: 850px; margin: 0 auto; box-shadow: 0 10px 26px rgba(var(--navy-rgb), 0.08); }
          .schedule-badges { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
-         .sched-pill { background: #f2eee3; border: 1px solid #d7c79f; color: #142332; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 6px rgba(41, 77, 96, 0.12); }
+         .sched-pill { background: var(--light-accent); border: 1px solid var(--border-accent); color: var(--navy); padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; box-shadow: 0 2px 6px rgba(var(--secondary-rgb), 0.12); }
          .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-         .shop-item { background: white; border: 1px solid #e2dac6; border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 20px; box-shadow: 0 6px 18px rgba(20, 35, 50, 0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; }
-         .shop-item:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(41, 77, 96, 0.18); }
-         .shop-icon-box { background: linear-gradient(135deg, #142332 0%, #203e50 100%); color: white; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.2rem; }
+         .shop-item { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; text-align: center; padding-bottom: 20px; box-shadow: 0 6px 18px rgba(var(--navy-rgb), 0.08); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+         .shop-item:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(var(--secondary-rgb), 0.18); }
+         .shop-icon-box { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: white; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 2.2rem; }
          .shop-icon-box span { font-size: 0.78rem; text-transform: uppercase; margin-top: 6px; color: var(--gold); font-weight: bold; letter-spacing: 0.5px; }
-         .shop-btn { display: inline-block; padding: 9px 18px; background: linear-gradient(135deg, #1e3c50 0%, #294d60 100%); color: white; text-decoration: none; border-radius: 5px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
-         .shop-btn:hover { background: linear-gradient(135deg, #ad2937 0%, #861e2a 100%); }
+         .shop-btn { display: inline-block; padding: 9px 18px; background: linear-gradient(135deg, var(--royal-blue) 0%, var(--secondary) 100%); color: white; text-decoration: none; border-radius: 5px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
+         .shop-btn:hover { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
          .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
          .gallery-card {
              position: relative;
              border-radius: 16px;
              overflow: hidden;
              height: 245px;
-             background: #142332;
+             background: var(--navy);
              display: flex;
              align-items: center;
              justify-content: center;
-             border: 2px solid rgba(41, 77, 96, 0.55);
-             box-shadow: 0 8px 24px rgba(30, 60, 80, 0.22);
+             border: 2px solid rgba(var(--secondary-rgb), 0.55);
+             box-shadow: 0 8px 24px rgba(var(--royal-blue-rgb), 0.22);
          }
          .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
          .gallery-card iframe { width: 100%; height: 100%; border: 0; }
@@ -106,37 +93,37 @@
              bottom: 0;
              left: 0;
              right: 0;
-             background: linear-gradient(90deg, rgba(20, 35, 50, 0.95), rgba(32, 62, 80, 0.92), rgba(41, 77, 96, 0.92));
+             background: linear-gradient(90deg, rgba(var(--navy-rgb), 0.95), rgba(var(--navy-mid-rgb), 0.92), rgba(var(--secondary-rgb), 0.92));
              color: white;
              padding: 12px;
              font-weight: 600;
              text-align: center;
-             border-top: 1px solid rgba(200, 169, 107, 0.5);
+             border-top: 1px solid rgba(var(--gold-rgb), 0.5);
          }
-         .review-card { background: linear-gradient(145deg, rgba(20, 35, 50, 0.92) 0%, rgba(32, 62, 80, 0.9) 100%); backdrop-filter: blur(8px); padding: 26px; border-radius: 16px; border: 1px solid rgba(200, 169, 107, 0.4); box-shadow: 0 8px 24px rgba(20, 35, 50, 0.18); transition: transform 0.25s ease, border-color 0.25s ease; }
+         .review-card { background: linear-gradient(145deg, rgba(var(--navy-rgb), 0.92) 0%, rgba(var(--navy-mid-rgb), 0.9) 100%); backdrop-filter: blur(8px); padding: 26px; border-radius: 16px; border: 1px solid rgba(var(--gold-rgb), 0.4); box-shadow: 0 8px 24px rgba(var(--navy-rgb), 0.18); transition: transform 0.25s ease, border-color 0.25s ease; }
          .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
-         .stars { color: var(--gold); font-size: 1.25rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(200, 169, 107, 0.45); }
+         .stars { color: var(--gold); font-size: 1.25rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(var(--gold-rgb), 0.45); }
          .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; }
-         .info-card { background: linear-gradient(145deg, #ffffff 0%, #f2eee3 100%); padding: 30px; border-radius: 16px; border: 1px solid rgba(41, 77, 96, 0.3); box-shadow: 0 8px 24px rgba(30, 60, 80, 0.12); }
+         .info-card { background: linear-gradient(145deg, #ffffff 0%, var(--light-accent) 100%); padding: 30px; border-radius: 16px; border: 1px solid rgba(var(--secondary-rgb), 0.3); box-shadow: 0 8px 24px rgba(var(--royal-blue-rgb), 0.12); }
          .hours-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-         .hours-table td { padding: 6px 0; border-bottom: 1px solid rgba(41, 77, 96, 0.2); }
-         .hours-table td:last-child { text-align: right; font-weight: 700; color: #142332; }
-         .map-frame { width: 100%; height: 220px; border: 2px solid rgba(41, 77, 96, 0.4); border-radius: 12px; margin-top: 16px; }
-         .form-box { background: linear-gradient(155deg, #ffffff 0%, #f7f6f1 100%); padding: 32px; border-radius: 16px; box-shadow: 0 12px 32px rgba(30, 60, 80, 0.14); border: 1px solid rgba(41, 77, 96, 0.25); }
+         .hours-table td { padding: 6px 0; border-bottom: 1px solid rgba(var(--secondary-rgb), 0.2); }
+         .hours-table td:last-child { text-align: right; font-weight: 700; color: var(--navy); }
+         .map-frame { width: 100%; height: 220px; border: 2px solid rgba(var(--secondary-rgb), 0.4); border-radius: 12px; margin-top: 16px; }
+         .form-box { background: linear-gradient(155deg, #ffffff 0%, var(--light) 100%); padding: 32px; border-radius: 16px; box-shadow: 0 12px 32px rgba(var(--royal-blue-rgb), 0.14); border: 1px solid rgba(var(--secondary-rgb), 0.25); }
          .form-group { margin-bottom: 15px; }
-         .form-group label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 0.9rem; color: #142332; }
-         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px; border: 1px solid #d7c79f; border-radius: 8px; font-size: 0.95rem; background: #ffffff; }
-         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(41, 77, 96, 0.2); }
+         .form-group label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 0.9rem; color: var(--navy); }
+         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px; border: 1px solid var(--border-accent); border-radius: 8px; font-size: 0.95rem; background: #ffffff; }
+         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(var(--secondary-rgb), 0.2); }
          .form-group .consent-label { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; line-height: 1.5; cursor: pointer; }
          .form-group .consent-checkbox { flex: 0 0 auto; width: 18px; height: 18px; margin: 3px 0 0; padding: 0; accent-color: var(--secondary); }
          .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-         footer { background: var(--navy-shine); color: #f7f6f1; text-align: center; padding: 38px 20px; font-size: 0.92rem; border-top: 3px solid var(--gold); }
+         footer { background: var(--navy-shine); color: var(--light); text-align: center; padding: 38px 20px; font-size: 0.92rem; border-top: 3px solid var(--gold); }
          .footer-logo { display: block; height: 80px; width: auto; margin: 0 0 12px; border: 2px solid var(--gold); border-radius: 8px; }
          footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
          footer a:hover { text-decoration: underline; }
-         .background-music-control { position: fixed; right: 16px; bottom: 16px; z-index: 1000; display: flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--gold); border-radius: 999px; background: rgba(20, 35, 50, 0.96); box-shadow: 0 4px 16px rgba(20, 35, 50, 0.28); }
-         .background-music-control button { border: 0; border-radius: 999px; padding: 8px 13px; color: white; background: #1e3c50; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
-         .background-music-control button:hover { background: #294d60; }
+         .background-music-control { position: fixed; right: 16px; bottom: 16px; z-index: 1000; display: flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--gold); border-radius: 999px; background: rgba(var(--navy-rgb), 0.96); box-shadow: 0 4px 16px rgba(var(--navy-rgb), 0.28); }
+         .background-music-control button { border: 0; border-radius: 999px; padding: 8px 13px; color: white; background: var(--royal-blue); font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+         .background-music-control button:hover { background: var(--secondary); }
          .background-music-control button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
          .music-status { color: #e5dfd1; font-size: 0.78rem; }
          @media (max-width: 768px) {
@@ -154,6 +141,7 @@
              .music-status { font-size: 0.7rem; }
          }
     </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <div class="top-bar">
@@ -166,7 +154,7 @@
 
     <header>
         <div style="display:flex; align-items:center; gap:12px;">
-            <img src="JEONS-TKD-FINAL.jpg" alt="A Plus Grand Master Jeon Taekwondo Logo" style="height:60px; width:auto; border-radius:8px; border:2px solid #c8a96b; box-shadow:0 0 12px rgba(200,169,107,0.25);">
+            <img src="JEONS-TKD-FINAL.jpg" alt="A Plus Grand Master Jeon Taekwondo Logo" style="height:60px; width:auto; border-radius:8px; border:2px solid var(--gold); box-shadow:0 0 12px rgba(200,169,107,0.25);">
             <h1><span>A Plus</span> Grand Master Jeon Taekwondo</h1>
         </div>
         <nav>
@@ -249,19 +237,19 @@
             <div class="grid-3">
                 <div class="promo-card">
                     <span class="promo-tag">🔥 New Student Special Offer</span>
-                    <h3 style="color:#142332;">Free Trial Class + 6-Week Trial Program</h3>
+                    <h3 style="color:var(--navy);">Free Trial Class + 6-Week Trial Program</h3>
                     <p>Start with a complimentary <strong>Free Trial Class</strong>! Afterward, sign up for our <strong>6-Week Trial Program</strong> to receive a <strong>Free Official Taekwondo Uniform</strong> and <strong>Unlimited Classes</strong>.</p>
                     <a href="#signup" class="btn" style="padding:10px 22px; font-size:0.85rem;">Start With a Free Trial Class</a>
                 </div>
                 <div class="promo-card">
                     <span class="promo-tag">⭐ All Ages &amp; Levels</span>
-                    <h3 style="color:#142332;">1-on-1 Private Taekwondo Lessons</h3>
+                    <h3 style="color:var(--navy);">1-on-1 Private Taekwondo Lessons</h3>
                     <p>We customize every program to meet each student's individual needs! Choose a private lesson with Grand Master Jeon for focused training.</p>
                     <a href="#signup" class="btn" style="padding:10px 22px; font-size:0.85rem;">Inquire About Private Lessons</a>
                 </div>
                 <div class="news-card">
-                    <span style="color:#1e3c50; font-weight:bold; font-size:0.85rem;">📅 MONTHLY DOJANG UPDATE</span>
-                    <h3 style="color:#142332;">Upcoming Belt Promotion Testing</h3>
+                    <span style="color:var(--royal-blue); font-weight:bold; font-size:0.85rem;">📅 MONTHLY DOJANG UPDATE</span>
+                    <h3 style="color:var(--navy);">Upcoming Belt Promotion Testing</h3>
                     <p>Students preparing for their next belt rank should confirm their stripe requirements with Grand Master Jeon during class. Extra practice sessions are included with all Unlimited Class memberships.</p>
                 </div>
             </div>
@@ -275,14 +263,14 @@
         </div>
         <div class="master-grid">
             <div>
-                <img src="Master%20Jeon%20final%20proof.jpeg" alt="Grand Master Jeon" style="width:100%; height:auto; border-radius:10px; box-shadow: 0 8px 24px rgba(20, 35, 50, 0.18); border: 2px solid rgba(41, 77, 96, 0.35);">
+                <img src="Master%20Jeon%20final%20proof.jpeg" alt="Grand Master Jeon" style="width:100%; height:auto; border-radius:10px; box-shadow: 0 8px 24px rgba(var(--navy-rgb), 0.18); border: 2px solid rgba(var(--secondary-rgb), 0.35);">
                 <div class="unlimited-banner">
-                    <h4 style="margin:0 0 6px 0; color:#c8a96b;">🥋 6-Week Trial Program &amp; Unlimited Classes</h4>
+                    <h4 style="margin:0 0 6px 0; color:var(--gold);">🥋 6-Week Trial Program &amp; Unlimited Classes</h4>
                     <p style="margin:0; font-size:0.95rem;">Experience our dojang with a <strong>Free Trial Class</strong>! Enroll in our <strong>6-Week Trial Program</strong> afterward and receive a <strong>Free Uniform</strong> plus unlimited classes.</p>
                 </div>
             </div>
             <div class="master-card">
-                <h3 style="margin-top:0; color:#1e3c50;">World-Class Credentials &amp; International Awards</h3>
+                <h3 style="margin-top:0; color:var(--royal-blue);">World-Class Credentials &amp; International Awards</h3>
                 <ul>
                     <li><strong>7th-Degree Certified Black Belt:</strong> Master-level expertise in traditional forms, Olympic sparring, self-defense, and board breaking.</li>
                     <li><strong>Pan Am Best Referee Award (Las Vegas):</strong> Honored as the <em>Best Referee</em> at the Pan Am International Championships in Las Vegas.</li>
@@ -343,7 +331,7 @@
             <div class="underline"></div>
         </div>
         <div class="schedule-box">
-            <h3 style="color:#142332;">Tailored Class Groups &amp; Custom Private Lessons</h3>
+            <h3 style="color:var(--navy);">Tailored Class Groups &amp; Custom Private Lessons</h3>
             <p>To give every student the best possible instruction, <strong>we separate our groups by both ages and experience levels</strong> (from first-time beginners to advanced black belts), while private lessons are personalized for each student's goals.</p>
             <div class="schedule-badges">
                 <span class="sched-pill">🥋 Separated by Age Group</span>
@@ -368,48 +356,48 @@
                 <div class="shop-item">
                     <div class="shop-icon-box">🥋<span>Official Uniform</span></div>
                     <div style="padding:18px;">
-                        <h3 style="color:#142332;">Taekwondo Uniform (Dobok)</h3>
-                        <p style="font-size:0.9rem; color:#53616a;">Durable white &amp; black-collar uniforms with official school patch in all youth and adult sizes.</p>
+                        <h3 style="color:var(--navy);">Taekwondo Uniform (Dobok)</h3>
+                        <p style="font-size:0.9rem; color:var(--muted);">Durable white &amp; black-collar uniforms with official school patch in all youth and adult sizes.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
                 <div class="shop-item">
                     <div class="shop-icon-box">👕<span>Apparel</span></div>
                     <div style="padding:18px;">
-                        <h3 style="color:#142332;">Official Dojang T-Shirts</h3>
-                        <p style="font-size:0.9rem; color:#53616a;">Breathable cotton &amp; performance training tees featuring the A Plus Grand Master Jeon Taekwondo logo.</p>
+                        <h3 style="color:var(--navy);">Official Dojang T-Shirts</h3>
+                        <p style="font-size:0.9rem; color:var(--muted);">Breathable cotton &amp; performance training tees featuring the A Plus Grand Master Jeon Taekwondo logo.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
                 <div class="shop-item">
                     <div class="shop-icon-box">🧥<span>Outerwear</span></div>
                     <div style="padding:18px;">
-                        <h3 style="color:#142332;">Team Hoodies &amp; Jackets</h3>
-                        <p style="font-size:0.9rem; color:#53616a;">Warm pullover hoodies and zip-up warm-up jackets for cold NJ mornings and tournament travel.</p>
+                        <h3 style="color:var(--navy);">Team Hoodies &amp; Jackets</h3>
+                        <p style="font-size:0.9rem; color:var(--muted);">Warm pullover hoodies and zip-up warm-up jackets for cold NJ mornings and tournament travel.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
                 <div class="shop-item">
                     <div class="shop-icon-box">🎯<span>Training Gear</span></div>
                     <div style="padding:18px;">
-                        <h3 style="color:#142332;">Kicking Targets &amp; Pads</h3>
-                        <p style="font-size:0.9rem; color:#53616a;">Hand-held double kicking paddles, kick shields, and focus mitts for home practice and speed drills.</p>
+                        <h3 style="color:var(--navy);">Kicking Targets &amp; Pads</h3>
+                        <p style="font-size:0.9rem; color:var(--muted);">Hand-held double kicking paddles, kick shields, and focus mitts for home practice and speed drills.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
                 <div class="shop-item">
                     <div class="shop-icon-box">⚔️<span>Weapons</span></div>
                     <div style="padding:18px;">
-                        <h3 style="color:#142332;">Foam Training Nunchucks</h3>
-                        <p style="font-size:0.9rem; color:#53616a;">Safe, padded cord and chain nunchucks for coordination, forms training, and weapons workshops.</p>
+                        <h3 style="color:var(--navy);">Foam Training Nunchucks</h3>
+                        <p style="font-size:0.9rem; color:var(--muted);">Safe, padded cord and chain nunchucks for coordination, forms training, and weapons workshops.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
                 <div class="shop-item">
                     <div class="shop-icon-box">🛡️<span>Protection</span></div>
                     <div style="padding:18px;">
-                        <h3 style="color:#142332;">Sparring Gear &amp; Bags</h3>
-                        <p style="font-size:0.9rem; color:#53616a;">Full protective sparring sets (headgear, chest guard, shin/forearm guards) and custom gear bags.</p>
+                        <h3 style="color:var(--navy);">Sparring Gear &amp; Bags</h3>
+                        <p style="font-size:0.9rem; color:var(--muted);">Full protective sparring sets (headgear, chest guard, shin/forearm guards) and custom gear bags.</p>
                         <a href="#signup" class="shop-btn">Reserve / Inquire</a>
                     </div>
                 </div>
@@ -539,12 +527,12 @@
             </div>
         </div>
 
-        <div style="max-width:850px; margin:0 auto 35px auto; background:#142332; border-radius:16px; overflow:hidden; border:2px solid #1e3c50; box-shadow: 0 10px 30px rgba(30,60,80,0.25);">
+        <div style="max-width:850px; margin:0 auto 35px auto; background:var(--navy); border-radius:16px; overflow:hidden; border:2px solid var(--royal-blue); box-shadow: 0 10px 30px rgba(30,60,80,0.25);">
             <video controls playsinline style="width:100%; max-height:480px; display:block; margin:0 auto;">
                 <source src="VID_20250203_194409_298.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div style="padding:14px 20px; color:white; font-weight:600; text-align:center; background:linear-gradient(90deg, #142332, #203e50, #294d60);">
+            <div style="padding:14px 20px; color:white; font-weight:600; text-align:center; background:linear-gradient(90deg, var(--navy), var(--navy-mid), var(--secondary));">
                 🎬 Dojang Training &amp; Class Action at A Plus Grand Master Jeon Taekwondo
             </div>
         </div>
@@ -567,44 +555,44 @@
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f7f6f1;">"Master Jeon is an exceptional teacher and is great with kids. Our five year old son loves the class, and within the first few weeks he was more focused than ever."</p>
+                        <p style="font-style:italic; color:var(--light);">"Master Jeon is an exceptional teacher and is great with kids. Our five year old son loves the class, and within the first few weeks he was more focused than ever."</p>
                     </div>
-                    <div style="font-weight:bold; color:#c8a96b; margin-top:12px;">— Paul Gugger • Google Review</div>
+                    <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— Paul Gugger • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f7f6f1;">"My son (7yrs) has been taking classes with Master Jeon for a few months now and he loves it. He is learning focus, he is gaining confidence, and he is starting to truly enjoy martial arts."</p>
+                        <p style="font-style:italic; color:var(--light);">"My son (7yrs) has been taking classes with Master Jeon for a few months now and he loves it. He is learning focus, he is gaining confidence, and he is starting to truly enjoy martial arts."</p>
                     </div>
-                    <div style="font-weight:bold; color:#c8a96b; margin-top:12px;">— Melissa Wojcik • Google Review</div>
+                    <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— Melissa Wojcik • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f7f6f1;">"Two years ago my daughter walked through the door into Master Jeon's Tae Kwon Do. It was quite simply the best thing we have done for her."</p>
+                        <p style="font-style:italic; color:var(--light);">"Two years ago my daughter walked through the door into Master Jeon's Tae Kwon Do. It was quite simply the best thing we have done for her."</p>
                     </div>
-                    <div style="font-weight:bold; color:#c8a96b; margin-top:12px;">— F. Charlesworth • Google Review</div>
+                    <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— F. Charlesworth • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f7f6f1;">"Master Jeon exhibits all the qualities of an excellent instructor: skill, discipline, devotion, patience and an impressive respect for his students."</p>
+                        <p style="font-style:italic; color:var(--light);">"Master Jeon exhibits all the qualities of an excellent instructor: skill, discipline, devotion, patience and an impressive respect for his students."</p>
                     </div>
-                    <div style="font-weight:bold; color:#c8a96b; margin-top:12px;">— J. Donohue • Google Review</div>
+                    <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— J. Donohue • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f7f6f1;">"Our daughters have been taking Tae Kwon Do with Master Jeon for several years. It has been life changing for them in terms of confidence and discipline."</p>
+                        <p style="font-style:italic; color:var(--light);">"Our daughters have been taking Tae Kwon Do with Master Jeon for several years. It has been life changing for them in terms of confidence and discipline."</p>
                     </div>
-                    <div style="font-weight:bold; color:#c8a96b; margin-top:12px;">— Dan G. • Google Review</div>
+                    <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— Dan G. • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:#f7f6f1;">"When my son was 8, he was having issues with becoming explosive, and it was becoming more and more frequent. We decided to give Tae Kwon Do a try... and it changed everything."</p>
+                        <p style="font-style:italic; color:var(--light);">"When my son was 8, he was having issues with becoming explosive, and it was becoming more and more frequent. We decided to give Tae Kwon Do a try... and it changed everything."</p>
                     </div>
-                    <div style="font-weight:bold; color:#c8a96b; margin-top:12px;">— J. Todd • Google Review</div>
+                    <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— J. Todd • Google Review</div>
                 </div>
             </div>
 
@@ -620,24 +608,24 @@
         <div class="section-title">
             <h2>Reserve Free Trial Class &amp; Private Lesson Inquiry</h2>
             <div class="underline"></div>
-            <p>Reach out online below or email <a href="mailto:njchestertkd@gmail.com" style="color:#1e3c50; font-weight:bold;">njchestertkd@gmail.com</a> for group schedules, a <strong>Free Trial Class</strong>, or private lesson requests.</p>
+            <p>Reach out online below or email <a href="mailto:njchestertkd@gmail.com" style="color:var(--royal-blue); font-weight:bold;">njchestertkd@gmail.com</a> for group schedules, a <strong>Free Trial Class</strong>, or private lesson requests.</p>
         </div>
         <div class="contact-container">
             <div class="info-card">
                 <div style="margin-bottom:18px;">
-                    <strong style="color:#142332; display:block;">📍 Dojang Location</strong>
+                    <strong style="color:var(--navy); display:block;">📍 Dojang Location</strong>
                     23 W. Main St, Chester, NJ 07930<br>
                     <small>(Convenient Main Street location with parking)</small><br>
-                    <a href="https://www.google.com/maps/search/?api=1&query=A+Plus+Grand+Master+Jeon+Taekwondo+23+W+Main+St+Chester+NJ+07930" target="_blank" rel="noopener noreferrer" style="color:#294d60; font-weight:bold;">View Map</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=A+Plus+Grand+Master+Jeon+Taekwondo+23+W+Main+St+Chester+NJ+07930" target="_blank" rel="noopener noreferrer" style="color:var(--secondary); font-weight:bold;">View Map</a>
                 </div>
                 <div style="margin-bottom:18px;">
-                    <strong style="color:#142332; display:block;">📞 Call, Text, Email, or Instagram</strong>
-                    <a href="tel:9088797721" style="color:#1e3c50; font-size:1.25rem; font-weight:bold; text-decoration:none;">908-879-7721</a><br>
-                    Email: <a href="mailto:njchestertkd@gmail.com" style="color:#294d60; font-weight:bold;">njchestertkd@gmail.com</a><br>
-                    Instagram: <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer" style="color:#1e3c50; font-weight:bold; text-decoration:none;">@masterjeonstkd</a>
+                    <strong style="color:var(--navy); display:block;">📞 Call, Text, Email, or Instagram</strong>
+                    <a href="tel:9088797721" style="color:var(--royal-blue); font-size:1.25rem; font-weight:bold; text-decoration:none;">908-879-7721</a><br>
+                    Email: <a href="mailto:njchestertkd@gmail.com" style="color:var(--secondary); font-weight:bold;">njchestertkd@gmail.com</a><br>
+                    Instagram: <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer" style="color:var(--royal-blue); font-weight:bold; text-decoration:none;">@masterjeonstkd</a>
                 </div>
                 <div>
-                    <strong style="color:#142332; display:block; margin-bottom:6px;">🕒 Dojang Hours</strong>
+                    <strong style="color:var(--navy); display:block; margin-bottom:6px;">🕒 Dojang Hours</strong>
                     <table class="hours-table">
                         <tr><td>Monday</td><td>11:30 AM – 7:30 PM</td></tr>
                         <tr><td>Tuesday</td><td>11:30 AM – 8:30 PM</td></tr>
@@ -652,8 +640,8 @@
             </div>
 
             <div class="form-box">
-                <h3 style="margin-top:0; color:#1e3c50;">Submit a Free Trial or Private Lesson Request</h3>
-                <p style="font-size:0.95rem; color:#53616a;">Tell us the student's age and experience level, and choose either a <strong>Free Trial Class</strong> or a <strong>Private Lesson Inquiry</strong>. We'll follow up by email with available options.</p>
+                <h3 style="margin-top:0; color:var(--royal-blue);">Submit a Free Trial or Private Lesson Request</h3>
+                <p style="font-size:0.95rem; color:var(--muted);">Tell us the student's age and experience level, and choose either a <strong>Free Trial Class</strong> or a <strong>Private Lesson Inquiry</strong>. We'll follow up by email with available options.</p>
 
                 <form action="https://formsubmit.co/njchestertkd@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New Free Trial / Private Lesson Inquiry - A Plus Taekwondo">
@@ -723,7 +711,7 @@
         <img class="footer-logo" src="JEONS-TKD-FINAL.jpg" alt="">
         <p style="color:white; font-weight:bold; font-size:1.1rem; margin-bottom:6px; text-shadow:0 0 10px rgba(200,169,107,0.35);">A Plus Grand Master Jeon Taekwondo</p>
         <p style="margin:4px 0;">23 W. Main St, Chester, NJ 07930 • <a href="tel:9088797721">908-879-7721</a> • <a href="mailto:njchestertkd@gmail.com">njchestertkd@gmail.com</a> • <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer">@masterjeonstkd</a></p>
-        <p style="margin-top:12px; font-size:0.82rem; color:#e2dac6;">© 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
+        <p style="margin-top:12px; font-size:0.82rem; color:var(--border);">© 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
     </footer>
     <div class="background-music-control">
         <button id="music-toggle" type="button" aria-pressed="false">♫ Play music</button>
