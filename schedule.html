@@ -18,6 +18,8 @@
         .day ul { list-style: none; margin: 0; padding: 0; }
         .day li { border-top: 1px solid #e2e8f0; padding: 12px 0; }
         .day li:last-child { padding-bottom: 0; }
+        .day li.private { background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 10px 12px; margin: 8px 0; }
+        .day li.private .time { color: #92400e; }
         .time { display: block; font-weight: 700; color: #1e40af; }
         .calendar-all { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
         .calendar-all a { display: inline-block; padding: 10px 16px; border-radius: 6px; color: white; background: #1e40af; font-weight: 700; text-decoration: none; }
@@ -40,7 +42,7 @@
     </header>
     <main>
         <div class="intro">
-            <p>Group classes are 40 minutes long. Times are local to Chester, New Jersey (Eastern Time).</p>
+            <p>Group classes are 40–50 minutes long. Times are local to Chester, New Jersey (Eastern Time).</p>
             <p>Use the calendar links to add a repeating weekly class beginning with the next upcoming session. You can change or remove the event in your calendar.</p>
             <div class="calendar-all"><a href="#" id="all-apple">Add to Apple Calendar</a><a href="#" id="all-android">Add to Android Calendar</a></div>
             <noscript><p>Enable JavaScript to use the calendar links.</p></noscript>
