@@ -86,6 +86,9 @@
          }
          .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
          .gallery-card iframe { width: 100%; height: 100%; border: 0; }
+         .video-soundtrack-button { display: block; margin: 12px auto; padding: 9px 14px; border: 1px solid var(--gold); border-radius: 6px; color: white; background: var(--royal-blue); font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+         .video-soundtrack-button:hover { background: var(--secondary); }
+         .video-soundtrack-button:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2px; }
          .gallery-card img[src="2025-05-06.jpg"] { object-fit: contain; }
          .gallery-card:hover img { transform: scale(1.05); }
          .gallery-caption {
@@ -528,10 +531,11 @@
         </div>
 
         <div style="max-width:850px; margin:0 auto 35px auto; background:var(--navy); border-radius:16px; overflow:hidden; border:2px solid var(--royal-blue); box-shadow: 0 10px 30px rgba(30,60,80,0.25);">
-            <video controls playsinline style="width:100%; max-height:480px; display:block; margin:0 auto;">
+            <video id="dojang-class-action-video" controls playsinline style="width:100%; max-height:480px; display:block; margin:0 auto;">
                 <source src="VID_20250203_194409_298.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <button id="class-action-soundtrack" class="video-soundtrack-button" type="button" aria-pressed="false">♫ Play with music</button>
             <div style="padding:14px 20px; color:white; font-weight:600; text-align:center; background:linear-gradient(90deg, var(--navy), var(--navy-mid), var(--secondary));">
                 🎬 Dojang Training &amp; Class Action at A Plus Grand Master Jeon Taekwondo
             </div>
@@ -721,6 +725,8 @@
         (() => {
             const button = document.getElementById('music-toggle');
             const status = document.getElementById('music-status');
+            const classVideo = document.getElementById('dojang-class-action-video');
+            const videoButton = document.getElementById('class-action-soundtrack');
             const melody = [69, 72, 74, 76, 79, 76, 74, 72, 69, 72, 74, 79, 81, 79, 76, 74];
             const bass = [45, 52, 48, 55];
             const beatLength = 0.48;
@@ -729,6 +735,8 @@
             let scheduler;
             let nextNoteTime = 0;
             let step = 0;
+            let videoMusicActive = false;
+            let videoWasMuted = false;
 
             function playNote(midiNote, start, duration, volume, type) {
                 const oscillator = audio.createOscillator();
@@ -759,37 +767,96 @@
                 button.textContent = playing ? '♫ Pause music' : '♫ Play music';
                 button.setAttribute('aria-pressed', String(playing));
                 status.textContent = playing ? 'Music is playing' : 'Music is off';
+                const soundtrackPlaying = playing && videoMusicActive;
+                videoButton.textContent = soundtrackPlaying ? '♫ Stop soundtrack' : '♫ Play with music';
+                videoButton.setAttribute('aria-pressed', String(soundtrackPlaying));
+            }
+
+            async function startMusic() {
+                if (!audio) {
+                    const AudioContext = window.AudioContext;
+                    if (!AudioContext) throw new Error('Web Audio is not supported');
+                    audio = new AudioContext();
+                    masterGain = audio.createGain();
+                    masterGain.gain.value = 0.18;
+                    masterGain.connect(audio.destination);
+                }
+
+                if (audio.state !== 'running') {
+                    await audio.resume();
+                    nextNoteTime = audio.currentTime + 0.05;
+                    scheduleNotes();
+                    scheduler = setInterval(scheduleNotes, 25);
+                }
+                setPlaying(true);
+            }
+
+            async function stopMusic() {
+                clearInterval(scheduler);
+                scheduler = undefined;
+                if (videoMusicActive) {
+                    videoMusicActive = false;
+                    classVideo.muted = videoWasMuted;
+                }
+                if (audio && audio.state === 'running') await audio.suspend();
+                setPlaying(false);
+            }
+
+            async function reportPlaybackError(error, message) {
+                clearInterval(scheduler);
+                scheduler = undefined;
+                if (videoMusicActive) classVideo.muted = videoWasMuted;
+                videoMusicActive = false;
+                setPlaying(false);
+                status.textContent = message;
+                console.error(message, error);
+                if (audio && audio.state === 'running') {
+                    try {
+                        await audio.suspend();
+                    } catch (suspendError) {
+                        console.error('Could not suspend background music after playback failed:', suspendError);
+                    }
+                }
             }
 
             button.addEventListener('click', async () => {
                 try {
-                    if (!audio) {
-                        const AudioContext = window.AudioContext;
-                        if (!AudioContext) throw new Error('Web Audio is not supported');
-                        audio = new AudioContext();
-                        masterGain = audio.createGain();
-                        masterGain.gain.value = 0.18;
-                        masterGain.connect(audio.destination);
-                    }
-
-                    if (audio.state === 'running') {
-                        clearInterval(scheduler);
-                        scheduler = undefined;
-                        await audio.suspend();
-                        setPlaying(false);
+                    if (audio && audio.state === 'running') {
+                        await stopMusic();
                     } else {
-                        await audio.resume();
-                        nextNoteTime = audio.currentTime + 0.05;
-                        scheduleNotes();
-                        scheduler = setInterval(scheduleNotes, 25);
-                        setPlaying(true);
+                        await startMusic();
                     }
                 } catch (error) {
-                    clearInterval(scheduler);
-                    scheduler = undefined;
-                    setPlaying(false);
-                    status.textContent = 'Music could not start in this browser';
-                    console.error('Background music playback failed:', error);
+                    await reportPlaybackError(error, 'Background music could not start in this browser');
+                }
+            });
+
+            videoButton.addEventListener('click', async () => {
+                try {
+                    if (videoMusicActive) {
+                        await stopMusic();
+                        return;
+                    }
+                    videoWasMuted = classVideo.muted;
+                    classVideo.muted = true;
+                    await startMusic();
+                    if (classVideo.paused) await classVideo.play();
+                    videoMusicActive = true;
+                    setPlaying(true);
+                } catch (error) {
+                    classVideo.muted = videoWasMuted;
+                    await reportPlaybackError(error, 'Video soundtrack could not start');
+                }
+            });
+
+            classVideo.addEventListener('pause', () => {
+                if (videoMusicActive && !classVideo.ended) {
+                    stopMusic().catch(error => reportPlaybackError(error, 'Video soundtrack could not stop'));
+                }
+            });
+            classVideo.addEventListener('ended', () => {
+                if (videoMusicActive) {
+                    stopMusic().catch(error => reportPlaybackError(error, 'Video soundtrack could not stop'));
                 }
             });
         })();
