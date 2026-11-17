@@ -134,6 +134,11 @@
          .footer-logo { display: block; height: 80px; width: auto; margin: 0 0 12px; border: 2px solid var(--gold); border-radius: 8px; }
          footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
          footer a:hover { text-decoration: underline; }
+         .background-music-control { position: fixed; right: 16px; bottom: 16px; z-index: 1000; display: flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--gold); border-radius: 999px; background: rgba(15, 23, 42, 0.96); box-shadow: 0 4px 16px rgba(15, 23, 42, 0.28); }
+         .background-music-control button { border: 0; border-radius: 999px; padding: 8px 13px; color: white; background: #1e40af; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+         .background-music-control button:hover { background: #2563eb; }
+         .background-music-control button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+         .music-status { color: #e2e8f0; font-size: 0.78rem; }
          @media (max-width: 768px) {
              header { flex-direction: column; gap: 10px; text-align: center; }
              .nav-dropdown-menu { left: 50%; transform: translateX(-50%); }
@@ -142,6 +147,11 @@
              .hero-copy { margin: 0 auto; }
              .hero-badges, .hero-buttons { justify-content: center; }
              .hero h2 { font-size: 2.1rem; }
+         }
+         @media (max-width: 480px) {
+             .background-music-control { right: 10px; bottom: 10px; gap: 6px; padding: 6px 8px; }
+             .background-music-control button { padding: 7px 10px; }
+             .music-status { font-size: 0.7rem; }
          }
     </style>
 </head>
@@ -418,6 +428,10 @@
             <div class="gallery-card">
                 <iframe src="https://www.youtube-nocookie.com/embed/mTkirSrvHII" title="A Plus Grand Master Jeon Taekwondo video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <div class="gallery-caption">Taekwondo Training Video</div>
+            </div>
+            <div class="gallery-card">
+                <iframe src="https://www.youtube-nocookie.com/embed/boWLFYSW99g" title="A Plus Grand Master Jeon Taekwondo video 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="gallery-caption">More Taekwondo Training Highlights</div>
             </div>
             <div class="gallery-card">
                 <img src="11169416_1009019465783320_6141996570803873612_o.jpg" alt="Gold Medal Demo Team, Korea">
@@ -707,5 +721,86 @@
         <p style="margin:4px 0;">23 W. Main St, Chester, NJ 07930 • <a href="tel:9088797721">908-879-7721</a> • <a href="mailto:njchestertkd@gmail.com">njchestertkd@gmail.com</a> • <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer">@masterjeonstkd</a></p>
         <p style="margin-top:12px; font-size:0.82rem; color:#cbd5e1;">© 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
     </footer>
+    <div class="background-music-control">
+        <button id="music-toggle" type="button" aria-pressed="false">♫ Play music</button>
+        <span id="music-status" class="music-status" aria-live="polite">Music is off</span>
+    </div>
+    <script>
+        (() => {
+            const button = document.getElementById('music-toggle');
+            const status = document.getElementById('music-status');
+            const melody = [69, 72, 74, 76, 79, 76, 74, 72, 69, 72, 74, 79, 81, 79, 76, 74];
+            const bass = [45, 52, 48, 55];
+            const beatLength = 0.48;
+            let audio;
+            let masterGain;
+            let scheduler;
+            let nextNoteTime = 0;
+            let step = 0;
+
+            function playNote(midiNote, start, duration, volume, type) {
+                const oscillator = audio.createOscillator();
+                const envelope = audio.createGain();
+                oscillator.type = type;
+                oscillator.frequency.value = 440 * (2 ** ((midiNote - 69) / 12));
+                envelope.gain.setValueAtTime(0.0001, start);
+                envelope.gain.exponentialRampToValueAtTime(volume, start + 0.025);
+                envelope.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+                oscillator.connect(envelope);
+                envelope.connect(masterGain);
+                oscillator.start(start);
+                oscillator.stop(start + duration + 0.02);
+            }
+
+            function scheduleNotes() {
+                while (nextNoteTime < audio.currentTime + 0.1) {
+                    playNote(melody[step % melody.length], nextNoteTime, 0.38, 0.12, 'triangle');
+                    if (step % 4 === 0) {
+                        playNote(bass[(step / 4) % bass.length], nextNoteTime, 0.85, 0.045, 'sine');
+                    }
+                    step += 1;
+                    nextNoteTime += beatLength;
+                }
+            }
+
+            function setPlaying(playing) {
+                button.textContent = playing ? '♫ Pause music' : '♫ Play music';
+                button.setAttribute('aria-pressed', String(playing));
+                status.textContent = playing ? 'Music is playing' : 'Music is off';
+            }
+
+            button.addEventListener('click', async () => {
+                try {
+                    if (!audio) {
+                        const AudioContext = window.AudioContext;
+                        if (!AudioContext) throw new Error('Web Audio is not supported');
+                        audio = new AudioContext();
+                        masterGain = audio.createGain();
+                        masterGain.gain.value = 0.18;
+                        masterGain.connect(audio.destination);
+                    }
+
+                    if (audio.state === 'running') {
+                        clearInterval(scheduler);
+                        scheduler = undefined;
+                        await audio.suspend();
+                        setPlaying(false);
+                    } else {
+                        await audio.resume();
+                        nextNoteTime = audio.currentTime + 0.05;
+                        scheduleNotes();
+                        scheduler = setInterval(scheduleNotes, 25);
+                        setPlaying(true);
+                    }
+                } catch (error) {
+                    clearInterval(scheduler);
+                    scheduler = undefined;
+                    setPlaying(false);
+                    status.textContent = 'Music could not start in this browser';
+                    console.error('Background music playback failed:', error);
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
