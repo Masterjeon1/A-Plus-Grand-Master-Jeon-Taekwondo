@@ -9,14 +9,14 @@
          .top-bar { background: var(--navy); color: var(--light); font-size: 0.85rem; padding: 9px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
          .top-bar a { color: var(--light); text-decoration: none; font-weight: 600; }
          .top-bar a:hover { text-shadow: 0 0 8px rgba(var(--gold-rgb), 0.7); }
-         header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); color: white; padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(var(--navy-rgb), 0.25); }
-         header h1 { margin: 0; font-size: 1.45rem; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.45); }
+         header { background: var(--card-shine); color: var(--navy); padding: 0.9rem 1.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(var(--navy-rgb), 0.12); border-bottom: 1px solid var(--border); }
+         header h1 { margin: 0; font-size: 1.45rem; color: var(--navy); }
          header h1 span { background: var(--gold-shine); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
          nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-         nav a { color: #f1f5f9; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.25s ease; }
+         nav a { color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.25s ease; }
          nav a:hover { color: var(--gold); text-shadow: 0 0 10px rgba(var(--gold-rgb), 0.7); }
          .nav-dropdown { position: relative; }
-         .nav-dropdown summary { color: #f1f5f9; font-size: 0.88rem; font-weight: 600; cursor: pointer; list-style: none; }
+         .nav-dropdown summary { color: var(--navy); font-size: 0.88rem; font-weight: 600; cursor: pointer; list-style: none; }
          .nav-dropdown summary::-webkit-details-marker { display: none; }
          .nav-dropdown summary::after { content: "⌄"; display: inline-block; margin-left: 5px; transition: transform 0.2s ease; }
          .nav-dropdown[open] summary::after { transform: rotate(180deg); }
@@ -27,26 +27,26 @@
          nav .nav-dropdown-menu a:hover, nav .nav-dropdown-menu a:focus-visible { background: var(--light-accent); color: var(--royal-blue); text-shadow: none; outline: none; }
          .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25); border: 1px solid rgba(var(--gold-rgb), 0.5); }
          .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
-         .hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, var(--royal-blue) 100%); min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 70px; text-align: center; }
-         .hero-copy { max-width: 860px; color: #ffffff; }
+         .hero { background: var(--hero-shine); min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 70px; text-align: center; }
+         .hero-copy { max-width: 860px; color: var(--navy); }
          .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
          .badge { background: var(--secondary); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 12px rgba(var(--secondary-rgb), 0.35); }
          .badge-gold { background: var(--gold-shine); color: var(--navy); box-shadow: 0 4px 15px rgba(var(--gold-rgb), 0.45); border: 1px solid #fff; }
-         .hero h2 { font-size: 2.7rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 860px; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.65); letter-spacing: 0.5px; }
-         .hero p { font-size: 1.15rem; margin-bottom: 28px; max-width: 680px; color: var(--light); text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); }
+         .hero h2 { font-size: 2.7rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 860px; letter-spacing: 0.5px; }
+         .hero p { font-size: 1.15rem; margin-bottom: 28px; max-width: 680px; color: var(--muted); }
          .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
          .btn { background: var(--primary); color: white; padding: 14px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; border: 1px solid rgba(255,255,255,0.2); transition: all 0.25s ease; }
          .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.35); }
-         .btn-outline { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(4px); border: 2px solid var(--gold); color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.25); }
+         .btn-outline { background: rgba(255, 255, 255, 0.72); border: 2px solid var(--gold); color: var(--navy); box-shadow: 0 4px 15px rgba(var(--navy-rgb), 0.12); }
          .btn-outline:hover { background: var(--gold-shine); color: var(--navy); }
          .section { padding: 65px 20px; max-width: 1150px; margin: 0 auto; }
          .bg-light { background: var(--light); }
-         .bg-dark { background: var(--navy-shine); color: white; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
+         .bg-dark { background: var(--navy-shine); color: var(--text); border-top: 2px solid var(--border-accent); border-bottom: 2px solid var(--border-accent); }
          .section-title { text-align: center; margin-bottom: 40px; }
          .section-title h2 { font-size: 2.15rem; margin: 0 0 10px 0; color: var(--navy); }
-         .bg-dark .section-title h2 { color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+         .bg-dark .section-title h2 { color: var(--navy); }
          .section-title p { color: var(--muted); max-width: 680px; margin: 10px auto 0; }
-         .bg-dark .section-title p { color: #e5dfd1; }
+         .bg-dark .section-title p { color: var(--muted); }
          .underline { width: 75px; height: 4px; background: linear-gradient(90deg, var(--royal-blue) 0%, var(--secondary) 55%, var(--gold) 100%); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(var(--secondary-rgb), 0.2); }
          .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
          .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
@@ -57,7 +57,7 @@
          .news-card:hover { transform: translateY(-3px); }
          .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: center; }
          .master-card { background: var(--card-shine); padding: 30px; border-radius: 10px; box-shadow: 0 8px 26px rgba(var(--navy-rgb), 0.1); border-left: 5px solid var(--gold); border-top: 2px solid var(--secondary); }
-         .unlimited-banner { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--royal-blue) 100%); color: white; padding: 22px; border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 12px 24px rgba(var(--navy-rgb), 0.18); }
+         .unlimited-banner { background: linear-gradient(135deg, var(--light-accent), var(--gold-light)); color: var(--navy); padding: 22px; border: 1px solid var(--border-accent); border-radius: 10px; margin-top: 20px; text-align: center; box-shadow: 0 8px 20px rgba(var(--navy-rgb), 0.1); }
          .card { background: var(--card-shine); padding: 28px; border-radius: 10px; box-shadow: 0 8px 22px rgba(var(--navy-rgb), 0.1); text-align: center; border-top: 4px solid var(--secondary); border-bottom: 2px solid var(--gold); transition: transform 0.25s ease, box-shadow 0.25s ease; }
          .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(var(--secondary-rgb), 0.2); }
          .age-tag { display: inline-block; background: var(--light-accent); color: var(--navy-mid); padding: 5px 13px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; margin-bottom: 12px; border: 1px solid var(--border-accent); }
@@ -103,7 +103,7 @@
              text-align: center;
              border-top: 1px solid rgba(var(--gold-rgb), 0.5);
          }
-         .review-card { background: linear-gradient(145deg, rgba(var(--navy-rgb), 0.92) 0%, rgba(var(--navy-mid-rgb), 0.9) 100%); backdrop-filter: blur(8px); padding: 26px; border-radius: 16px; border: 1px solid rgba(var(--gold-rgb), 0.4); box-shadow: 0 8px 24px rgba(var(--navy-rgb), 0.18); transition: transform 0.25s ease, border-color 0.25s ease; }
+         .review-card { background: var(--card-shine); padding: 26px; border-radius: 16px; border: 1px solid var(--border-accent); box-shadow: 0 8px 24px rgba(var(--navy-rgb), 0.1); transition: transform 0.25s ease, border-color 0.25s ease; }
          .review-card:hover { transform: translateY(-5px); border-color: var(--gold); }
          .stars { color: var(--gold); font-size: 1.25rem; margin-bottom: 10px; text-shadow: 0 0 10px rgba(var(--gold-rgb), 0.45); }
          .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; }
@@ -120,7 +120,7 @@
          .form-group .consent-label { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; line-height: 1.5; cursor: pointer; }
          .form-group .consent-checkbox { flex: 0 0 auto; width: 18px; height: 18px; margin: 3px 0 0; padding: 0; accent-color: var(--secondary); }
          .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-         footer { background: var(--navy-shine); color: var(--light); text-align: center; padding: 38px 20px; font-size: 0.92rem; border-top: 3px solid var(--gold); }
+         footer { background: var(--navy-shine); color: var(--text); text-align: center; padding: 38px 20px; font-size: 0.92rem; border-top: 2px solid var(--border-accent); }
          .footer-logo { display: block; height: 80px; width: auto; margin: 0 0 12px; border: 2px solid var(--gold); border-radius: 8px; }
          footer a { color: var(--gold); text-decoration: none; font-weight: 600; }
          footer a:hover { text-decoration: underline; }
@@ -268,7 +268,7 @@
             <div>
                 <img src="Master%20Jeon%20final%20proof.jpeg" alt="Grand Master Jeon" style="width:100%; height:auto; border-radius:10px; box-shadow: 0 8px 24px rgba(var(--navy-rgb), 0.18); border: 2px solid rgba(var(--secondary-rgb), 0.35);">
                 <div class="unlimited-banner">
-                    <h4 style="margin:0 0 6px 0; color:var(--gold);">🥋 6-Week Trial Program &amp; Unlimited Classes</h4>
+                    <h4 style="margin:0 0 6px 0; color:var(--gold-dark);">🥋 6-Week Trial Program &amp; Unlimited Classes</h4>
                     <p style="margin:0; font-size:0.95rem;">Experience our dojang with a <strong>Free Trial Class</strong>! Enroll in our <strong>6-Week Trial Program</strong> afterward and receive a <strong>Free Uniform</strong> plus unlimited classes.</p>
                 </div>
             </div>
@@ -530,13 +530,13 @@
             </div>
         </div>
 
-        <div style="max-width:850px; margin:0 auto 35px auto; background:var(--navy); border-radius:16px; overflow:hidden; border:2px solid var(--royal-blue); box-shadow: 0 10px 30px rgba(30,60,80,0.25);">
+        <div style="max-width:850px; margin:0 auto 35px auto; background:var(--card-shine); border-radius:16px; overflow:hidden; border:1px solid var(--border-accent); box-shadow: 0 10px 30px rgba(var(--navy-rgb),0.12);">
             <video id="dojang-class-action-video" controls playsinline style="width:100%; max-height:480px; display:block; margin:0 auto;">
                 <source src="VID_20250203_194409_298.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <button id="class-action-soundtrack" class="video-soundtrack-button" type="button" aria-pressed="false">♫ Play with music</button>
-            <div style="padding:14px 20px; color:white; font-weight:600; text-align:center; background:linear-gradient(90deg, var(--navy), var(--navy-mid), var(--secondary));">
+            <div style="padding:14px 20px; color:var(--navy); font-weight:600; text-align:center; background:linear-gradient(90deg, var(--gold-light), var(--light-accent), var(--card-shine));">
                 🎬 Dojang Training &amp; Class Action at A Plus Grand Master Jeon Taekwondo
             </div>
         </div>
@@ -559,42 +559,42 @@
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:var(--light);">"Master Jeon is an exceptional teacher and is great with kids. Our five year old son loves the class, and within the first few weeks he was more focused than ever."</p>
+                        <p style="font-style:italic; color:var(--text);">"Master Jeon is an exceptional teacher and is great with kids. Our five year old son loves the class, and within the first few weeks he was more focused than ever."</p>
                     </div>
                     <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— Paul Gugger • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:var(--light);">"My son (7yrs) has been taking classes with Master Jeon for a few months now and he loves it. He is learning focus, he is gaining confidence, and he is starting to truly enjoy martial arts."</p>
+                        <p style="font-style:italic; color:var(--text);">"My son (7yrs) has been taking classes with Master Jeon for a few months now and he loves it. He is learning focus, he is gaining confidence, and he is starting to truly enjoy martial arts."</p>
                     </div>
                     <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— Melissa Wojcik • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:var(--light);">"Two years ago my daughter walked through the door into Master Jeon's Tae Kwon Do. It was quite simply the best thing we have done for her."</p>
+                        <p style="font-style:italic; color:var(--text);">"Two years ago my daughter walked through the door into Master Jeon's Tae Kwon Do. It was quite simply the best thing we have done for her."</p>
                     </div>
                     <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— F. Charlesworth • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:var(--light);">"Master Jeon exhibits all the qualities of an excellent instructor: skill, discipline, devotion, patience and an impressive respect for his students."</p>
+                        <p style="font-style:italic; color:var(--text);">"Master Jeon exhibits all the qualities of an excellent instructor: skill, discipline, devotion, patience and an impressive respect for his students."</p>
                     </div>
                     <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— J. Donohue • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:var(--light);">"Our daughters have been taking Tae Kwon Do with Master Jeon for several years. It has been life changing for them in terms of confidence and discipline."</p>
+                        <p style="font-style:italic; color:var(--text);">"Our daughters have been taking Tae Kwon Do with Master Jeon for several years. It has been life changing for them in terms of confidence and discipline."</p>
                     </div>
                     <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— Dan G. • Google Review</div>
                 </div>
                 <div class="review-card">
                     <div>
                         <div class="stars">★★★★★</div>
-                        <p style="font-style:italic; color:var(--light);">"When my son was 8, he was having issues with becoming explosive, and it was becoming more and more frequent. We decided to give Tae Kwon Do a try... and it changed everything."</p>
+                        <p style="font-style:italic; color:var(--text);">"When my son was 8, he was having issues with becoming explosive, and it was becoming more and more frequent. We decided to give Tae Kwon Do a try... and it changed everything."</p>
                     </div>
                     <div style="font-weight:bold; color:var(--gold); margin-top:12px;">— J. Todd • Google Review</div>
                 </div>
@@ -713,9 +713,9 @@
 
     <footer>
         <img class="footer-logo" src="JEONS-TKD-FINAL.jpg" alt="">
-        <p style="color:white; font-weight:bold; font-size:1.1rem; margin-bottom:6px; text-shadow:0 0 10px rgba(200,169,107,0.35);">A Plus Grand Master Jeon Taekwondo</p>
+        <p style="color:var(--navy); font-weight:bold; font-size:1.1rem; margin-bottom:6px;">A Plus Grand Master Jeon Taekwondo</p>
         <p style="margin:4px 0;">23 W. Main St, Chester, NJ 07930 • <a href="tel:9088797721">908-879-7721</a> • <a href="mailto:njchestertkd@gmail.com">njchestertkd@gmail.com</a> • <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer">@masterjeonstkd</a></p>
-        <p style="margin-top:12px; font-size:0.82rem; color:var(--border);">© 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
+        <p style="margin-top:12px; font-size:0.82rem; color:var(--muted);">© 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
     </footer>
     <div class="background-music-control">
         <button id="music-toggle" type="button" aria-pressed="false">♫ Play music</button>
