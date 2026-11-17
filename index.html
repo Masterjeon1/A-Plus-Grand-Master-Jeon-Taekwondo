@@ -29,6 +29,16 @@
          nav { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
          nav a { color: #f1f5f9; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: all 0.25s ease; }
          nav a:hover { color: var(--gold); text-shadow: 0 0 10px rgba(255, 215, 0, 0.7); }
+         .nav-dropdown { position: relative; }
+         .nav-dropdown summary { color: #f1f5f9; font-size: 0.88rem; font-weight: 600; cursor: pointer; list-style: none; }
+         .nav-dropdown summary::-webkit-details-marker { display: none; }
+         .nav-dropdown summary::after { content: "⌄"; display: inline-block; margin-left: 5px; transition: transform 0.2s ease; }
+         .nav-dropdown[open] summary::after { transform: rotate(180deg); }
+         .nav-dropdown summary:hover { color: var(--gold); }
+         .nav-dropdown summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 2px; }
+         .nav-dropdown-menu { position: absolute; top: calc(100% + 10px); left: 0; z-index: 1001; display: grid; min-width: 220px; padding: 8px; background: #ffffff; border: 1px solid #bfdbfe; border-radius: 8px; box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2); }
+         nav .nav-dropdown-menu a { display: block; padding: 9px 12px; color: #0f172a; border-radius: 5px; }
+         nav .nav-dropdown-menu a:hover, nav .nav-dropdown-menu a:focus-visible { background: #eff6ff; color: #1e40af; text-shadow: none; outline: none; }
          .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(213, 0, 0, 0.35); border: 1px solid rgba(255, 215, 0, 0.5); }
          .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
          .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%); min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 70px; text-align: center; }
@@ -125,6 +135,7 @@
          footer a:hover { text-decoration: underline; }
          @media (max-width: 768px) {
              header { flex-direction: column; gap: 10px; text-align: center; }
+             .nav-dropdown-menu { left: 50%; transform: translateX(-50%); }
              .form-row { grid-template-columns: 1fr; }
              .hero { padding: 48px 20px; }
              .hero-copy { margin: 0 auto; }
@@ -148,7 +159,17 @@
             <h1><span>A Plus</span> Grand Master Jeon Taekwondo</h1>
         </div>
         <nav>
-            <a href="#about">About</a>
+            <details class="nav-dropdown">
+                <summary>About</summary>
+                <div class="nav-dropdown-menu">
+                    <a href="#about">About Overview</a>
+                    <a href="#why-us">Why Us?</a>
+                    <a href="#our-approach">Our Approach</a>
+                    <a href="#our-dojang">Our Dojang</a>
+                    <a href="#our-curriculum">Our Curriculum</a>
+                    <a href="#master">Our Instructor</a>
+                </div>
+            </details>
             <a href="#news">News &amp; Promos</a>
             <a href="#master">Grand Master Jeon</a>
             <a href="#programs">Programs</a>
@@ -183,19 +204,19 @@
             <p>Discover what makes A Plus Grand Master Jeon Taekwondo a place to build skill, confidence, and character.</p>
         </div>
         <div class="grid-3">
-            <div class="card">
+            <div class="card" id="why-us">
                 <h3>Why Us?</h3>
                 <p>For <strong>25 years</strong> in Chester, NJ, Grand Master Jeon has helped students build physical strength, sharp focus, and unshakable confidence. Our lessons bring traditional Korean martial arts values—courtesy, integrity, perseverance, and self-control—together with modern coaching and structured training.</p>
             </div>
-            <div class="card">
+            <div class="card" id="our-approach">
                 <h3>Our Approach</h3>
                 <p>We make training structured, encouraging, and tailored to each student. Group classes are organized by age and experience so students can develop at the right pace while practicing respect, discipline, and perseverance.</p>
             </div>
-            <div class="card">
+            <div class="card" id="our-dojang">
                 <h3>Our Dojang</h3>
                 <p>Located on Main Street in Chester, our dojang is a place for students and families to learn, practice, and grow as part of a welcoming martial arts community.</p>
             </div>
-            <div class="card">
+            <div class="card" id="our-curriculum">
                 <h3>Our Curriculum</h3>
                 <p>Students build a strong foundation through age-appropriate classes, belt goals, traditional forms, Olympic-style sparring, board breaking, and practical self-defense skills.</p>
             </div>
