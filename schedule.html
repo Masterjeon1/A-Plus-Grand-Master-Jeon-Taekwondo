@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule | A Plus Grand Master Jeon Taekwondo</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1e293b; background: #f8fafc; }
+        header { padding: 24px 20px; color: white; text-align: center; background: linear-gradient(135deg, #0f172a, #1e3a8a); border-bottom: 3px solid #ffd700; }
+        header a { color: #ffd700; font-weight: 700; }
+        h1 { margin: 12px 0 0; }
+        main { max-width: 1150px; padding: 35px 20px 60px; margin: auto; }
+        .intro { max-width: 800px; margin: 0 auto 30px; text-align: center; }
+        .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; align-items: start; }
+        .day { background: white; border: 1px solid #bfdbfe; border-top: 4px solid #2563eb; border-radius: 10px; padding: 20px; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08); }
+        .day h2 { margin: 0 0 12px; color: #0f172a; }
+        .day ul { list-style: none; margin: 0; padding: 0; }
+        .day li { border-top: 1px solid #e2e8f0; padding: 12px 0; }
+        .day li:last-child { padding-bottom: 0; }
+        .time { display: block; font-weight: 700; color: #1e40af; }
+        .calendar-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .calendar-actions a { display: inline-block; padding: 6px 9px; border: 1px solid #1e40af; border-radius: 5px; color: #1e40af; background: white; font-size: 0.8rem; font-weight: 700; text-decoration: none; }
+        .calendar-actions a:hover, .calendar-actions a:focus-visible { color: white; background: #1e40af; }
+        .notes { margin-top: 30px; padding: 20px; background: #eff6ff; border-radius: 10px; }
+        .notes h2 { margin-top: 0; }
+        .notes a { color: #1e40af; font-weight: 700; }
+        footer { padding: 25px 20px; text-align: center; color: #f8fafc; background: #0f172a; }
+        footer a { color: #ffd700; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">← Back to Home</a>
+        <h1>Class Schedule &amp; Private Lessons</h1>
+        <p>A Plus Grand Master Jeon Taekwondo · Chester, NJ</p>
+    </header>
+    <main>
+        <div class="intro">
+            <p>Group classes are 40 minutes long. Times are local to Chester, New Jersey (Eastern Time).</p>
+            <p>Use the calendar links to add a repeating weekly class beginning with the next upcoming session. You can change or remove the event in your calendar.</p>
+            <noscript><p>Enable JavaScript to use the calendar links.</p></noscript>
+        </div>
+        <div class="schedule-grid">
+            <section class="day">
+                <h2>Monday</h2>
+                <ul>
+                    <li><span class="time">12:00 PM</span>Private lesson by appointment</li>
+                    <li data-day="1" data-time="16:10"><span class="time">4:10 PM</span><span class="class-name">Yellow, Orange, Green &amp; Blue Belt</span></li>
+                    <li data-day="1" data-time="16:50"><span class="time">4:50 PM</span><span class="class-name">Sparring Class — All Levels</span></li>
+                    <li data-day="1" data-time="17:30"><span class="time">5:30 PM</span><span class="class-name">Purple, Red, Brown &amp; Junior Black Belt</span></li>
+                    <li data-day="1" data-time="18:10"><span class="time">6:10 PM</span><span class="class-name">Black Belt Only</span></li>
+                </ul>
+            </section>
+            <section class="day">
+                <h2>Tuesday</h2>
+                <ul>
+                    <li><span class="time">12:00 PM</span>Private lesson by appointment</li>
+                    <li data-day="2" data-time="16:10"><span class="time">4:10 PM</span><span class="class-name">All Color Belts</span></li>
+                    <li data-day="2" data-time="16:50"><span class="time">4:50 PM</span><span class="class-name">No Belt / White Belt</span></li>
+                    <li data-day="2" data-time="17:30"><span class="time">5:30 PM</span><span class="class-name">Black Belt Only</span></li>
+                    <li data-day="2" data-time="18:10"><span class="time">6:10 PM</span><span class="class-name">Black Belt Prep Class</span></li>
+                    <li data-day="2" data-time="19:00"><span class="time">7:00 PM</span><span class="class-name">All Adults &amp; Teens</span></li>
+                </ul>
+            </section>
+            <section class="day">
+                <h2>Wednesday</h2>
+                <ul>
+                    <li><span class="time">12:00 PM</span>Private lesson by appointment</li>
+                    <li data-day="3" data-time="16:10"><span class="time">4:10 PM</span><span class="class-name">No Belt / White Belt</span></li>
+                    <li data-day="3" data-time="16:50"><span class="time">4:50 PM</span><span class="class-name">Yellow, Orange, Green &amp; Blue Belt</span></li>
+                    <li data-day="3" data-time="17:30"><span class="time">5:30 PM</span><span class="class-name">Black Belt Only</span></li>
+                    <li><span class="time">6:10 PM</span>Private lesson by appointment</li>
+                </ul>
+            </section>
+            <section class="day">
+                <h2>Thursday</h2>
+                <ul>
+                    <li><span class="time">12:00 PM</span>Private lesson by appointment</li>
+                    <li data-day="4" data-time="16:10"><span class="time">4:10 PM</span><span class="class-name">Purple, Red, Brown &amp; Junior Black Belt</span></li>
+                    <li data-day="4" data-time="16:50"><span class="time">4:50 PM</span><span class="class-name">No Belt / White Belt</span></li>
+                    <li data-day="4" data-time="17:30"><span class="time">5:30 PM</span><span class="class-name">All Color Belts</span></li>
+                    <li data-day="4" data-time="18:10"><span class="time">6:10 PM</span><span class="class-name">Black Belt Only</span></li>
+                    <li data-day="4" data-time="19:00"><span class="time">7:00 PM</span><span class="class-name">All Adults &amp; Teens</span></li>
+                </ul>
+            </section>
+            <section class="day">
+                <h2>Friday</h2>
+                <ul>
+                    <li><span class="time">12:00 PM</span>Private lesson by appointment</li>
+                    <li data-day="5" data-time="16:10"><span class="time">4:10 PM</span><span class="class-name">Yellow, Orange, Green &amp; Blue Belt</span></li>
+                    <li data-day="5" data-time="16:50"><span class="time">4:50 PM</span><span class="class-name">Purple, Red, Brown &amp; Junior Black Belt</span></li>
+                    <li data-day="5" data-time="17:30"><span class="time">5:30 PM</span><span class="class-name">Elite Class — Invitation Only</span></li>
+                    <li><span class="time">6:10 PM</span>Private lesson by appointment</li>
+                </ul>
+            </section>
+            <section class="day">
+                <h2>Saturday</h2>
+                <ul>
+                    <li><span class="time">9:00 AM</span>Private lesson by appointment</li>
+                    <li data-day="6" data-time="09:40"><span class="time">9:40 AM</span><span class="class-name">Adult / Teen &amp; All Black Belts</span></li>
+                    <li data-day="6" data-time="10:30"><span class="time">10:30 AM</span><span class="class-name">No Belt / White Belt</span></li>
+                    <li data-day="6" data-time="11:10"><span class="time">11:10 AM</span><span class="class-name">All Color Belts</span></li>
+                </ul>
+            </section>
+        </div>
+        <div class="notes">
+            <h2>Class &amp; Private Lesson Information</h2>
+            <ul>
+                <li>Private lessons are available for all ages and levels by appointment. <a href="index.html#signup">Contact us</a> to ask about availability.</li>
+                <li>Classes require a uniform or school T-shirt; other T-shirts are not permitted.</li>
+                <li>All-belt classes are for yellow belts and above; no-belt and white-belt students may attend with permission.</li>
+                <li>Elite class is for ages 11 and up, by the master's invitation only.</li>
+            </ul>
+        </div>
+    </main>
+    <footer>23 W. Main St, Chester, NJ 07930 · <a href="index.html">Return to Home</a></footer>
+    <script>
+        const timeZone = 'America/New_York';
+        const localParts = new Intl.DateTimeFormat('en-US', {
+            timeZone, year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+        });
+
+        function nextClass(day, time) {
+            const parts = Object.fromEntries(localParts.formatToParts(new Date()).map(part => [part.type, part.value]));
+            const date = new Date(Date.UTC(Number(parts.year), Number(parts.month) - 1, Number(parts.day)));
+            let daysAway = (day - date.getUTCDay() + 7) % 7;
+            if (daysAway === 0 && `${parts.hour}:${parts.minute}` >= time) daysAway = 7;
+            date.setUTCDate(date.getUTCDate() + daysAway);
+            const dateText = date.toISOString().slice(0, 10).replaceAll('-', '');
+            const [hour, minute] = time.split(':').map(Number);
+            const start = `${dateText}T${String(hour).padStart(2, '0')}${String(minute).padStart(2, '0')}00`;
+            const endDate = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), hour, minute + 40));
+            const end = endDate.toISOString().replaceAll('-', '').replaceAll(':', '').slice(0, 15);
+            return { start, end };
+        }
+
+        function escapeCalendarText(value) {
+            return value.replaceAll('\\', '\\\\').replaceAll('\n', '\\n').replaceAll(';', '\\;').replaceAll(',', '\\,');
+        }
+
+        document.querySelectorAll('.day li[data-day][data-time]').forEach(item => {
+            const title = `Taekwondo: ${item.querySelector('.class-name').textContent}`;
+            const day = Number(item.dataset.day);
+            const time = item.dataset.time;
+            const actions = document.createElement('div');
+            actions.className = 'calendar-actions';
+
+            const apple = document.createElement('a');
+            apple.href = '#';
+            apple.textContent = 'Add to Apple Calendar';
+            apple.setAttribute('aria-label', `Add ${title} to Apple Calendar`);
+            apple.addEventListener('click', event => {
+                event.preventDefault();
+                const { start, end } = nextClass(day, time);
+                const stamp = new Date().toISOString().replaceAll('-', '').replaceAll(':', '').replace(/\.\d{3}Z$/, 'Z');
+                const ics = [
+                    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//A Plus Grand Master Jeon Taekwondo//Class Schedule//EN',
+                    'CALSCALE:GREGORIAN', 'BEGIN:VTIMEZONE', `TZID:${timeZone}`,
+                    'BEGIN:DAYLIGHT', 'DTSTART:20070311T020000', 'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU',
+                    'TZOFFSETFROM:-0500', 'TZOFFSETTO:-0400', 'TZNAME:EDT', 'END:DAYLIGHT',
+                    'BEGIN:STANDARD', 'DTSTART:20071104T020000', 'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU',
+                    'TZOFFSETFROM:-0400', 'TZOFFSETTO:-0500', 'TZNAME:EST', 'END:STANDARD', 'END:VTIMEZONE',
+                    'BEGIN:VEVENT', `UID:${Date.now()}-${day}-${time.replace(':', '')}@masterjeontkd`,
+                    `DTSTAMP:${stamp}`, `DTSTART;TZID=${timeZone}:${start}`, `DTEND;TZID=${timeZone}:${end}`,
+                    'RRULE:FREQ=WEEKLY', `SUMMARY:${escapeCalendarText(title)}`,
+                    'LOCATION:23 W. Main St\\, Chester\\, NJ 07930', 'END:VEVENT', 'END:VCALENDAR', ''
+                ].join('\r\n');
+                const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+                const download = document.createElement('a');
+                download.href = url;
+                download.download = 'taekwondo-class.ics';
+                document.body.append(download);
+                download.click();
+                download.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 1000);
+            });
+
+            const google = document.createElement('a');
+            google.href = 'https://calendar.google.com/calendar/render';
+            google.target = '_blank';
+            google.rel = 'noopener noreferrer';
+            google.textContent = 'Add to Google Calendar (Android)';
+            google.setAttribute('aria-label', `Add ${title} to Google Calendar`);
+            google.addEventListener('click', () => {
+                const { start, end } = nextClass(day, time);
+                const params = new URLSearchParams({
+                    action: 'TEMPLATE', text: title, dates: `${start}/${end}`,
+                    ctz: timeZone, recur: 'RRULE:FREQ=WEEKLY',
+                    location: '23 W. Main St, Chester, NJ 07930'
+                });
+                google.href = `https://calendar.google.com/calendar/render?${params}`;
+            });
+            actions.append(apple, google);
+            item.append(actions);
+        });
+    </script>
+</body>
+</html>
