@@ -130,6 +130,13 @@
          .background-music-control button { border: 0; border-radius: 999px; padding: 8px 13px; color: white; background: var(--royal-blue); font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
          .background-music-control button:hover { background: var(--secondary); }
          .background-music-control button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+         .social-icon { width: 1.25em; height: 1.25em; vertical-align: -0.25em; margin-right: 6px; }
+         .social-follow { margin-top: 22px; padding: 22px 16px; background: var(--card-shine); border: 1px solid var(--border-accent); border-radius: 14px; box-shadow: 0 6px 18px rgba(var(--navy-rgb), 0.1); }
+         .social-follow h3 { margin: 0 0 6px; color: var(--navy); }
+         .social-follow p { margin: 0 0 14px; }
+         .social-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+         .social-buttons .btn { display: inline-flex; align-items: center; background: #ffffff; color: var(--navy); border: 2px solid var(--border-accent); }
+         .social-buttons .btn:hover { background: var(--light-accent); color: var(--navy); }
          .music-status { color: #e5dfd1; font-size: 0.78rem; }
          @media (max-width: 768px) {
              header { flex-direction: column; gap: 10px; text-align: center; }
@@ -153,8 +160,8 @@
         <div>📍 23 W. Main St, Chester, NJ 07930</div>
         <div>
             📞 Call / Text: <a href="tel:9088797721">908-879-7721</a> &nbsp;|&nbsp;
-            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer">📸 @masterjeonstkd</a> &nbsp;|&nbsp;
-            <a href="https://www.youtube.com/@APlusTaekwondo" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig-g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".65" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig-g)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.6" cy="6.4" r="1.2" fill="#fff"/></svg>@masterjeonstkd</a> &nbsp;|&nbsp;
+            <a href="https://www.youtube.com/@APlusTaekwondo" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#ff0000"/><path d="M10 8.7v6.6l5.7-3.3z" fill="#fff"/></svg>YouTube</a>
         </div>
     </div>
 
@@ -417,7 +424,7 @@
             <div class="underline"></div>
             <p>Highlights from Grand Master Jeon's classes, student milestones, and daily training in Chester, NJ.</p>
             <p>Enjoy our videos? Subscribe to our YouTube channel for more training and dojang highlights!</p>
-            <a href="https://www.youtube.com/@APlusTaekwondo?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top:16px;">Subscribe on YouTube</a>
+            <a href="https://www.youtube.com/@APlusTaekwondo?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top:16px;"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#ff0000"/><path d="M10 8.7v6.6l5.7-3.3z" fill="#fff"/></svg>Subscribe on YouTube</a>
         </div>
 
         <div class="gallery-grid">
@@ -548,7 +555,7 @@
 
         <div style="text-align:center; margin-top:34px;">
             <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer" class="btn">
-                📸 See More Photos &amp; Videos on Instagram (@masterjeonstkd)
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig-g3" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".65" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig-g3)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.6" cy="6.4" r="1.2" fill="#fff"/></svg>See More Photos &amp; Videos on Instagram (@masterjeonstkd)
             </a>
         </div>
     </section>
@@ -719,6 +726,14 @@
     <footer>
         <img class="footer-logo" src="JEONS-TKD-FINAL.jpg" alt="">
         <p style="color:var(--navy); font-weight:bold; font-size:1.1rem; margin-bottom:6px;">A Plus Grand Master Jeon Taekwondo</p>
+        <div class="social-follow">
+            <h3>Join Our Dojang Family Online!</h3>
+            <p>Subscribe to our YouTube channel and follow us on Instagram for new training videos, photos, and dojang news.</p>
+            <div class="social-buttons">
+                <a href="https://www.youtube.com/@APlusTaekwondo?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#ff0000"/><path d="M10 8.7v6.6l5.7-3.3z" fill="#fff"/></svg>Subscribe on YouTube</a>
+                <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer" class="btn"><svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig-g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#feda75"/><stop offset=".35" stop-color="#fa7e1e"/><stop offset=".65" stop-color="#d62976"/><stop offset="1" stop-color="#4f5bd5"/></linearGradient></defs><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig-g2)"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.6" cy="6.4" r="1.2" fill="#fff"/></svg>Follow on Instagram</a>
+            </div>
+        </div>
         <p style="margin:4px 0;">23 W. Main St, Chester, NJ 07930 • <a href="tel:9088797721">908-879-7721</a> • <a href="mailto:njchestertkd@gmail.com">njchestertkd@gmail.com</a> • <a href="https://www.instagram.com/masterjeonstkd/" target="_blank" rel="noopener noreferrer">@masterjeonstkd</a> • <a href="https://www.youtube.com/@APlusTaekwondo" target="_blank" rel="noopener noreferrer">YouTube</a></p>
         <p style="margin-top:12px; font-size:0.82rem; color:var(--muted);">© 2026 A Plus Grand Master Jeon Taekwondo. All Rights Reserved.</p>
     </footer>
