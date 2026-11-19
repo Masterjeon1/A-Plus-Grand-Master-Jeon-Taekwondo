@@ -50,6 +50,9 @@
          .bg-dark .section-title p { color: var(--muted); }
          .underline { width: 75px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--royal-blue), var(--secondary), var(--gold)); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(var(--secondary-rgb), 0.2); }
          .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
+         .instructor-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0; }
+         .instructor-list li { background: var(--card-shine); padding: 22px; border-radius: 10px; border-top: 4px solid var(--secondary); border-bottom: 2px solid var(--gold); box-shadow: 0 8px 22px rgba(var(--navy-rgb), 0.1); text-align: center; }
+         .instructor-list h3 { margin: 0; color: var(--navy); }
          .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
          .promo-card { background: linear-gradient(145deg, #ffffff 0%, var(--light) 100%); border: 2px solid var(--secondary); border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(var(--navy-rgb), 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
          .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(var(--secondary-rgb), 0.2); }
@@ -240,9 +243,23 @@
                 <h3>Our Instructor</h3>
                 <p>Our school is shaped by generations of practice, dedicated teaching, and a deep respect for the art of Taekwondo. Since our founding in 2002, we have been guided by a commitment to authentic lineage, thoughtful instruction, and the understanding that true growth takes time. As a family-run dojang, we take a personal approach to both teaching and community—creating a welcoming environment where every student is known by name, supported, and guided with intention throughout their martial arts journey.</p>
                 <p>Our instructors include Master James Pappas, Master Sydney P., Master Fuscaldo, Master Joseph Chan, and Master Kevin Doyle.</p>
-                <a href="#master" class="shop-btn">Meet Our Instructors</a>
+                <a href="#instructors" class="shop-btn">Meet Our Instructors</a>
             </div>
         </div>
+    </section>
+
+    <section id="instructors" class="section">
+        <div class="section-title">
+            <h2>Meet Our Instructors</h2>
+            <div class="underline"></div>
+        </div>
+        <ul class="instructor-list">
+            <li><h3>Master James Pappas</h3></li>
+            <li><h3>Master Sydney P.</h3></li>
+            <li><h3>Master Fuscaldo</h3></li>
+            <li><h3>Master Joseph Chan</h3></li>
+            <li><h3>Master Kevin Doyle</h3></li>
+        </ul>
     </section>
 
     <div class="bg-light">
