@@ -50,6 +50,10 @@
          .section-title p { color: var(--muted); max-width: 680px; margin: 10px auto 0; }
          .bg-dark .section-title p { color: var(--muted); }
          .underline { width: 75px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--royal-blue), var(--secondary), var(--gold)); margin: 0 auto; border-radius: 2px; box-shadow: 0 2px 6px rgba(var(--secondary-rgb), 0.2); }
+         .award-banner { position: relative; overflow: hidden; max-width: 850px; margin: 0 auto 30px; padding: 20px; border: 2px solid var(--gold); border-radius: 10px; background: linear-gradient(135deg, #f3e2b8, #fff8e6, #d6ad58); box-shadow: 0 8px 24px rgba(var(--gold-rgb), 0.3); color: var(--navy); text-align: center; font-size: 1.15rem; font-weight: 800; }
+         .award-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.65) 50%, transparent 65%); transform: translateX(-100%); pointer-events: none; animation: award-shine 5s ease-in-out infinite; }
+         @keyframes award-shine { 0%, 15% { transform: translateX(-100%); } 55%, 100% { transform: translateX(100%); } }
+         @media (prefers-reduced-motion: reduce) { .award-banner::after { animation: none; } }
          .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
          .instructor-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0; }
          .instructor-list li { background: var(--card-shine); padding: 22px; border-radius: 10px; border-top: 4px solid var(--secondary); border-bottom: 2px solid var(--gold); box-shadow: 0 8px 22px rgba(var(--navy-rgb), 0.1); text-align: center; }
@@ -223,6 +227,7 @@
             <div class="underline"></div>
             <p>At A Plus Grand Master Jeon Taekwondo, we will create an exciting experience for your young children, teens, and adults! Serving the Chester community since 2002, our program stands out from others in town by fostering creativity, inspiring learning, and nurturing friendships. Guided by Grand Master Jeon—a world-class 7th-degree black belt who has trained teams at Princeton University and the West Point U.S. Army Military Academy—you can expect a warm, engaging environment where your child will thrive and develop a love for exploration. Our age-appropriate curriculum seamlessly blends dynamic martial arts with essential character education, teaching children to build unstoppable confidence and turn mistakes into valuable lessons. To see this positive impact firsthand, we invite your family to get started today with a complimentary free trial class!</p>
         </div>
+        <div class="award-banner">Selected "Top 10 Best Taekwondo School in NJ"</div>
         <div class="grid-3">
             <div class="card" id="why-us">
                 <h3>Why Us?</h3>
