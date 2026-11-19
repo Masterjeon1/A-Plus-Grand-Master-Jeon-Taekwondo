@@ -256,7 +256,7 @@
         </div>
     </section>
 
-    <section id="instructors" class="section">
+    <section id="instructors" class="section" hidden>
         <div class="section-title">
             <h2>Meet Our Instructors</h2>
             <div class="underline"></div>
@@ -273,7 +273,7 @@
         </details>
     </section>
 
-    <section id="black-belt-leaders" class="section">
+    <section id="black-belt-leaders" class="section" hidden>
         <div class="section-title">
             <h2>Meet Our Black Belt Leaders</h2>
             <div class="underline"></div>
@@ -812,6 +812,28 @@
     </div>
     <script>
         (() => {
+            const revealableSectionIds = new Set(['instructors', 'black-belt-leaders']);
+
+            function revealSection(id) {
+                if (!revealableSectionIds.has(id)) return;
+                const section = document.getElementById(id);
+                if (section) section.hidden = false;
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                const id = link.getAttribute('href').slice(1);
+                if (revealableSectionIds.has(id)) {
+                    link.addEventListener('click', () => revealSection(id));
+                }
+            });
+
+            function revealSectionFromHash() {
+                revealSection(window.location.hash.slice(1));
+            }
+
+            window.addEventListener('hashchange', revealSectionFromHash);
+            revealSectionFromHash();
+
             const button = document.getElementById('music-toggle');
             const status = document.getElementById('music-status');
             const classVideo = document.getElementById('dojang-class-action-video');
