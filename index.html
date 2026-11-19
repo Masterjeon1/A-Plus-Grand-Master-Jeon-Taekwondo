@@ -54,6 +54,9 @@
          .instructor-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0; }
          .instructor-list li { background: var(--card-shine); padding: 22px; border-radius: 10px; border-top: 4px solid var(--secondary); border-bottom: 2px solid var(--gold); box-shadow: 0 8px 22px rgba(var(--navy-rgb), 0.1); text-align: center; }
          .instructor-list h3 { margin: 0; color: var(--navy); }
+         .instructor-roster { margin-top: 22px; }
+         .instructor-roster summary { width: fit-content; margin: 0 auto 18px; padding: 10px 18px; border: 1px solid var(--border-accent); border-radius: 6px; color: var(--navy); background: var(--light-accent); font-weight: 700; cursor: pointer; }
+         .instructor-roster summary:hover, .instructor-roster summary:focus-visible { background: var(--gold-light); outline-color: var(--gold); }
          .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
          .promo-card { background: linear-gradient(145deg, #ffffff 0%, var(--light) 100%); border: 2px solid var(--secondary); border-radius: 10px; padding: 25px; box-shadow: 0 8px 25px rgba(var(--navy-rgb), 0.1); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
          .promo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(var(--secondary-rgb), 0.2); }
@@ -186,7 +189,8 @@
                     <a href="#our-approach">Our Approach</a>
                     <a href="#our-dojang">Our Dojang</a>
                     <a href="#our-curriculum">Our Curriculum</a>
-                    <a href="#master">Our Instructor</a>
+                    <a href="#instructors">Meet Our Instructors</a>
+                    <a href="#black-belt-leaders">Meet Our Black Belt Leaders</a>
                 </div>
             </details>
             <a href="#news">News &amp; Promos</a>
@@ -247,7 +251,7 @@
                 <h3>Leadership &amp; Mentorship Program</h3>
                 <p>Earning a black belt is not the finish line. It is the foundation for becoming a confident, compassionate leader in life. Guided directly by Grand Master Jeon, our Leadership &amp; Mentorship Program invites dedicated Black Belt students to step onto the mat alongside him—helping teach classes, supporting peers who need extra guidance, and setting a positive example for our color belts.</p>
                 <p>We believe the strongest communities are built when students lift one another up. Watching our Black Belts give back to the next generation—with the same patience and care they received as white belts—is one of the proudest parts of our school. In a world where kids are often pressured to follow the crowd, the poise, integrity, and kindness they build at our Chester dojang stay with them for school, college, and life.</p>
-                <a href="#black-belt-leaders" class="shop-btn">Meet Our Leaders</a>
+                <a href="#black-belt-leaders" class="shop-btn">Meet Our Black Belt Leaders</a>
             </div>
         </div>
     </section>
@@ -257,13 +261,16 @@
             <h2>Meet Our Instructors</h2>
             <div class="underline"></div>
         </div>
-        <ul class="instructor-list">
-            <li><h3>Master James Pappas</h3></li>
-            <li><h3>Master Sydney P.</h3></li>
-            <li><h3>Master Fuscaldo</h3></li>
-            <li><h3>Master Joseph Chan</h3></li>
-            <li><h3>Master Kevin Doyle</h3></li>
-        </ul>
+        <details class="instructor-roster">
+            <summary>Our Instructors</summary>
+            <ul class="instructor-list">
+                <li><h3>Master James Pappas</h3></li>
+                <li><h3>Master Sydney P.</h3></li>
+                <li><h3>Master Fuscaldo</h3></li>
+                <li><h3>Master Joseph Chan</h3></li>
+                <li><h3>Master Kevin Doyle</h3></li>
+            </ul>
+        </details>
     </section>
 
     <section id="black-belt-leaders" class="section">
@@ -271,16 +278,19 @@
             <h2>Meet Our Black Belt Leaders</h2>
             <div class="underline"></div>
         </div>
-        <ul class="instructor-list">
-            <li><h3>Anabel Lam</h3></li>
-            <li><h3>Reese Gilmore</h3></li>
-            <li><h3>Aliana Sudol</h3></li>
-            <li><h3>Anakin Lam</h3></li>
-            <li><h3>Romi Tee</h3></li>
-            <li><h3>Anjoli Lam</h3></li>
-            <li><h3>Aidan Lam</h3></li>
-            <li><h3>Ella Bergeron</h3></li>
-        </ul>
+        <details class="instructor-roster">
+            <summary>Our Black Belt Leaders</summary>
+            <ul class="instructor-list">
+                <li><h3>Anabel Lam</h3></li>
+                <li><h3>Reese Gilmore</h3></li>
+                <li><h3>Aliana Sudol</h3></li>
+                <li><h3>Anakin Lam</h3></li>
+                <li><h3>Romi Tee</h3></li>
+                <li><h3>Anjoli Lam</h3></li>
+                <li><h3>Aidan Lam</h3></li>
+                <li><h3>Ella Bergeron</h3></li>
+            </ul>
+        </details>
     </section>
 
     <div class="bg-light">
