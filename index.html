@@ -812,6 +812,16 @@
     </div>
     <script>
         (() => {
+            const aboutDropdown = document.querySelector('.nav-dropdown');
+            document.addEventListener('click', event => {
+                if (!aboutDropdown.contains(event.target) || event.target.closest('.nav-dropdown-menu a')) {
+                    aboutDropdown.open = false;
+                }
+            });
+            window.addEventListener('scroll', () => {
+                aboutDropdown.open = false;
+            }, { passive: true });
+
             const revealableSectionIds = new Set(['instructors', 'black-belt-leaders']);
 
             function showSelectedSection(id) {
