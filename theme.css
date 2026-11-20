@@ -1,30 +1,55 @@
 :root {
-    --primary: #6f2da8;
-    --primary-dark: #4b1f75;
-    --primary-rgb: 111, 45, 168;
-    --secondary: #77727f;
-    --secondary-rgb: 119, 114, 127;
-    --royal-blue: #695778;
-    --royal-blue-rgb: 105, 87, 120;
-    --gold: #a7aab2;
-    --gold-rgb: 167, 170, 178;
-    --gold-light: #e7e8ed;
-    --gold-dark: #595461;
-    --gold-shine: linear-gradient(135deg, #858a95 0%, #f5f6f8 32%, #b8bbc4 58%, #eef0f4 78%, #8e929e 100%);
-    --navy: #292234;
-    --navy-rgb: 41, 34, 52;
-    --navy-mid: #463b55;
-    --navy-mid-rgb: 70, 59, 85;
-    --navy-deep: #352a44;
-    --navy-shine: linear-gradient(135deg, #f1eff5 0%, #ded9e7 38%, #f7f6f9 68%, #d5cde0 100%);
-    --hero-shine: linear-gradient(120deg, #f0eef4 0%, #e0dbe9 48%, #f7f6f9 100%);
-    --card-shine: linear-gradient(145deg, #ffffff 0%, #f8f6fb 62%, #eee9f4 100%);
-    --dark: #292234;
-    --light: #faf9fc;
-    --page-bg: #fcfbfe;
-    --light-accent: #eee9f4;
-    --text: #2e2935;
-    --muted: #625c69;
-    --border: #e0dce5;
-    --border-accent: #c4bdce;
+    --primary: #c51626;
+    --primary-dark: #8f0d19;
+    --primary-rgb: 197, 22, 38;
+    --secondary: #8b929a;
+    --secondary-rgb: 139, 146, 154;
+    --silver: #e0e4e8;
+    --silver-rgb: 224, 228, 232;
+    --silver-light: #f8f9fa;
+    --silver-dark: #42474d;
+    --silver-shine: linear-gradient(120deg, #858c94 0%, #ffffff 18%, #cbd0d5 34%, #ffffff 49%, #a7aeb6 64%, #fdfefe 80%, #737a82 100%);
+    --gold: var(--silver);
+    --gold-rgb: var(--silver-rgb);
+    --gold-light: var(--silver-light);
+    --gold-dark: var(--silver-dark);
+    --gold-shine: var(--silver-shine);
+    --royal-blue: #c2c8ce;
+    --royal-blue-rgb: 194, 200, 206;
+    --navy: #101214;
+    --navy-rgb: 16, 18, 20;
+    --navy-mid: #292d31;
+    --navy-mid-rgb: 41, 45, 49;
+    --navy-deep: #070809;
+    --navy-shine: linear-gradient(120deg, #aeb4bb 0%, #ffffff 18%, #d1d5d9 35%, #ffffff 52%, #b4bac1 68%, #fefefe 82%, #949ba3 100%);
+    --hero-shine: linear-gradient(120deg, #151719 0%, #30343a 48%, #151719 100%);
+    --card-shine: linear-gradient(145deg, #ffffff 0%, #fafbfc 42%, #e8ebee 100%);
+    --dark: #101214;
+    --light: #ffffff;
+    --page-bg: #f5f6f7;
+    --light-accent: #e9ecef;
+    --text: #202327;
+    --muted: #575d63;
+    --border: #d4d8dc;
+    --border-accent: #aeb4ba;
+}
+
+.hero {
+    background-color: var(--navy-deep);
+}
+
+.award-banner {
+    background: var(--silver-shine);
+    border-color: var(--silver-light);
+    box-shadow: 0 8px 26px rgba(var(--silver-rgb), 0.45);
+}
+
+.grid-3 .card:nth-child(3n+2),
+.grid-3 .card:nth-child(3n) {
+    background: var(--card-shine);
+    border-top-color: var(--primary);
+}
+
+.music-status {
+    color: var(--silver-light);
 }
