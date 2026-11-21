@@ -28,15 +28,29 @@
          nav .nav-dropdown-menu a:hover, nav .nav-dropdown-menu a:focus-visible { background: var(--light-accent); color: var(--royal-blue); text-shadow: none; outline: none; }
          .nav-cta { background: var(--primary); padding: 8px 15px; border-radius: 6px; color: white !important; box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25); border: 1px solid rgba(var(--gold-rgb), 0.5); }
          .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
-         .hero { background-color: #263a32; background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("1000024514.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; min-height: 620px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px 70px; text-align: center; }
-         .hero-copy { width: 100%; max-width: 860px; margin: 0 auto; color: #fff; text-align: center; }
+         .hero { background-color: var(--navy-deep); background-image: linear-gradient(90deg, rgba(6,1,41,0.97) 0%, rgba(15,57,64,0.88) 43%, rgba(81,144,142,0.24) 68%, rgba(10,13,54,0.62) 100%), url("20260718_102113.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; min-height: 620px; display: flex; align-items: center; justify-content: center; padding: 56px 24px; text-align: left; }
+         .hero-inner { width: 100%; max-width: 1150px; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.68fr); gap: 56px; align-items: center; }
+         .hero-copy { width: 100%; max-width: 700px; margin: 0; color: #fff; text-align: left; }
          .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; }
          .hero .hero-eyebrow { display: inline-block; margin: 0 auto 16px; padding: 9px 18px; border: 1px solid var(--gold-light); border-radius: 999px; background: rgba(0, 0, 0, 0.75); color: var(--gold-light); font-size: 1rem; font-weight: 700; letter-spacing: 1px; }
          .badge { background: var(--secondary); color: white; padding: 7px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 12px rgba(var(--secondary-rgb), 0.35); }
          .badge-gold { background: var(--gold-shine); color: var(--navy); box-shadow: 0 4px 15px rgba(var(--gold-rgb), 0.45); border: 1px solid #fff; }
-         .hero h2 { font-size: 2.7rem; margin: 0 0 15px 0; text-transform: uppercase; max-width: 860px; letter-spacing: 0.5px; }
-         .hero p { font-size: 1.15rem; margin: 0 auto 28px; max-width: 680px; color: #fff; }
-         .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+         .hero h2 { font-size: clamp(2.7rem, 5vw, 4.8rem); line-height: 0.98; margin: 0 0 22px 0; text-transform: uppercase; max-width: 720px; letter-spacing: -1.5px; text-wrap: balance; }
+         .hero h2 strong { color: var(--gold-light); }
+         .hero p { font-size: 1.12rem; margin: 0 0 28px; max-width: 620px; color: rgba(255,255,255,0.92); }
+         .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start; }
+         .hero-trust { display: flex; flex-wrap: wrap; gap: 18px; margin: 26px 0 0; padding: 0; list-style: none; color: white; font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+         .hero-trust li { display: inline-flex; align-items: center; gap: 8px; }
+         .hero-trust li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px rgba(var(--gold-rgb),0.7); }
+         .hero-offer { position: relative; overflow: hidden; justify-self: end; width: min(100%, 390px); border: 1px solid rgba(var(--gold-rgb),0.65); border-radius: 18px; background: linear-gradient(145deg, rgba(255,255,255,0.97), rgba(228,239,237,0.96)); box-shadow: 0 24px 70px rgba(0,0,0,0.38); color: var(--navy); text-align: center; }
+         .hero-offer::before { content: ""; position: absolute; inset: 0 0 auto; height: 8px; background: linear-gradient(90deg, var(--primary), var(--gold), var(--secondary)); }
+         .offer-body { padding: 28px 26px 30px; }
+         .offer-kicker { display: inline-block; margin: 0 0 8px; color: var(--primary); font-size: 0.78rem; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; }
+         .hero-offer h3 { margin: 0; color: var(--navy); font-size: 2.05rem; line-height: 1.08; text-transform: uppercase; }
+         .hero-offer h3 span { display: block; color: var(--primary); font-size: 3.15rem; letter-spacing: -2px; }
+         .offer-divider { width: 72px; height: 4px; margin: 18px auto; border-radius: 99px; background: var(--gold); }
+         .hero-offer p { margin: 0 0 20px; color: var(--muted); font-size: 0.95rem; }
+         .hero-offer .btn { width: 100%; }
          .btn { background: var(--primary); color: white; padding: 14px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; border: 1px solid rgba(255,255,255,0.2); transition: all 0.25s ease; }
          .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.35); }
          .btn-outline { background: rgba(255, 255, 255, 0.72); border: 2px solid var(--gold); color: var(--navy); box-shadow: 0 4px 15px rgba(var(--navy-rgb), 0.12); }
@@ -161,10 +175,13 @@
              header { flex-direction: column; gap: 10px; text-align: center; }
              .nav-dropdown-menu { left: 50%; transform: translateX(-50%); }
              .form-row { grid-template-columns: 1fr; }
-             .hero { padding: 48px 20px; }
-             .hero-copy { margin: 0 auto; }
-             .hero-badges, .hero-buttons { justify-content: center; }
-             .hero h2 { font-size: 2.1rem; }
+             .hero { min-height: auto; padding: 48px 20px; text-align: center; background-position: 58% center; }
+             .hero-inner { grid-template-columns: 1fr; gap: 30px; }
+             .hero-copy { margin: 0 auto; text-align: center; }
+             .hero-badges, .hero-buttons, .hero-trust { justify-content: center; }
+             .hero h2 { font-size: clamp(2.25rem, 10vw, 3.4rem); margin-inline: auto; }
+             .hero p { margin-inline: auto; }
+             .hero-offer { justify-self: center; }
          }
          @media (max-width: 480px) {
              .background-music-control { right: 10px; bottom: 10px; gap: 6px; padding: 6px 8px; }
@@ -215,14 +232,30 @@
     </header>
 
     <section class="hero">
-        <div class="hero-copy">
-            <p class="hero-eyebrow">Chester, NJ’s Premier Taekwondo Academy Since 2002</p>
-            <h2>Build Unstoppable Confidence &amp; Razor-Sharp Focus.</h2>
-            <p>Train directly with 7th-Degree Black Belt Grand Master Jeon, former coach at Princeton University &amp; West Point. Experience our award-winning programs with a <strong>Free Trial Class</strong>, then enjoy 6 weeks of unlimited classes + a free uniform.</p>
-            <div class="hero-buttons">
-                <a href="#signup" class="btn">Sign Up For a Free Trial Class</a>
-                <a href="tel:9088797721" class="btn btn-outline">Call 908-879-7721</a>
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="hero-eyebrow">Chester, NJ’s Premier Taekwondo Academy Since 2002</p>
+                <h2>Build <strong>Confidence.</strong><br>Earn Respect.</h2>
+                <p>Train with 7th-Degree Black Belt Grand Master Jeon, former coach at Princeton University &amp; West Point. Develop focus, discipline, and strength for life.</p>
+                <div class="hero-buttons">
+                    <a href="#signup" class="btn">Claim Your Free Trial</a>
+                    <a href="tel:9088797721" class="btn btn-outline">Call 908-879-7721</a>
+                </div>
+                <ul class="hero-trust" aria-label="Program highlights">
+                    <li>Kids &amp; Teens</li>
+                    <li>Adult Classes</li>
+                    <li>Private Lessons</li>
+                </ul>
             </div>
+            <aside class="hero-offer" aria-label="New student offer">
+                <div class="offer-body">
+                    <p class="offer-kicker">New Student Special</p>
+                    <h3>One Month <span>FREE</span></h3>
+                    <div class="offer-divider"></div>
+                    <p>Includes 6 weeks of unlimited classes and a free uniform. Limited to one offer per person.</p>
+                    <a href="#signup" class="btn">Get Started Today</a>
+                </div>
+            </aside>
         </div>
     </section>
 

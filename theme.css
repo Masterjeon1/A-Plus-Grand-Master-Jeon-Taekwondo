@@ -1,30 +1,30 @@
 :root {
-    --primary: #d21f35;
-    --primary-dark: #a51629;
-    --primary-rgb: 210, 31, 53;
-    --secondary: #08777a;
-    --secondary-rgb: 8, 119, 122;
-    --silver: #d4dfdd;
-    --silver-rgb: 212, 223, 221;
-    --silver-light: #f3f8f7;
-    --silver-dark: #3c4b4a;
-    --silver-shine: linear-gradient(120deg, #9fb5b2 0%, #ffffff 18%, #d8e6e3 34%, #ffffff 49%, #b9cfcb 64%, #fdfefe 80%, #819a97 100%);
-    --gold: #f4d447;
-    --gold-rgb: 244, 212, 71;
-    --gold-light: #fff1a8;
-    --gold-dark: #6b5300;
-    --gold-shine: linear-gradient(120deg, #c99f18 0%, #fff4ad 20%, #f4d447 38%, #fff9d6 52%, #e3b927 72%, #fff1a8 88%, #b78a08 100%);
-    --royal-blue: #075f63;
-    --royal-blue-rgb: 7, 95, 99;
-    --navy: #101c1d;
-    --navy-rgb: 16, 28, 29;
-    --navy-mid: #173537;
-    --navy-mid-rgb: 23, 53, 55;
-    --navy-deep: #071112;
-    --navy-shine: linear-gradient(120deg, #d9eae7 0%, #ffffff 20%, #e4f0ee 38%, #ffffff 54%, #cfe2df 72%, #fdfefe 86%, #bdd5d1 100%);
-    --hero-shine: linear-gradient(120deg, #071112 0%, #173537 48%, #071112 100%);
-    --card-shine: linear-gradient(145deg, #ffffff 0%, #f8fbfa 42%, #e7f0ee 100%);
-    --dark: #101c1d;
+    --primary: #de191a;
+    --primary-dark: #9c1d20;
+    --primary-rgb: 222, 25, 26;
+    --secondary: #51908e;
+    --secondary-rgb: 81, 144, 142;
+    --silver: #cdd8dd;
+    --silver-rgb: 205, 216, 221;
+    --silver-light: #f1f0f2;
+    --silver-dark: #2f5b63;
+    --silver-shine: linear-gradient(120deg, #86b5b3 0%, #f1f0f2 18%, #cdd8dd 34%, #e6f9f7 49%, #6f9d9c 64%, #dce5e4 80%, #3e797a 100%);
+    --gold: #d0a992;
+    --gold-rgb: 208, 169, 146;
+    --gold-light: #e6d4c4;
+    --gold-dark: #7a5f4d;
+    --gold-shine: linear-gradient(120deg, #a57563 0%, #d0a992 20%, #f1f0f2 38%, #e6d4c4 52%, #a39173 72%, #d0a992 88%, #7a5f4d 100%);
+    --royal-blue: #0f3940;
+    --royal-blue-rgb: 15, 57, 64;
+    --navy: #0a0d36;
+    --navy-rgb: 10, 13, 54;
+    --navy-mid: #1f1326;
+    --navy-mid-rgb: 31, 19, 38;
+    --navy-deep: #060129;
+    --navy-shine: linear-gradient(120deg, #cdd8dd 0%, #f1f0f2 20%, #b5dcdb 38%, #f1f0f2 54%, #86b5b3 72%, #e6f9f7 86%, #a5c7c2 100%);
+    --hero-shine: linear-gradient(120deg, #060129 0%, #0f3940 48%, #060129 100%);
+    --card-shine: linear-gradient(145deg, #f1f0f2 0%, #f8fbfa 42%, #b5dcdb 100%);
+    --dark: #0a0d36;
     --light: #ffffff;
     --page-bg: #f4f8f7;
     --light-accent: #e4efed;
@@ -39,7 +39,7 @@
     isolation: isolate;
     overflow: hidden;
     background-color: var(--navy-deep);
-    background-image: linear-gradient(rgba(4, 25, 27, 0.7), rgba(4, 18, 20, 0.78)), url("1000024514.jpg");
+    background-image: linear-gradient(90deg, rgba(6,1,41,0.97) 0%, rgba(15,57,64,0.88) 43%, rgba(81,144,142,0.24) 68%, rgba(10,13,54,0.62) 100%), url("20260718_102113.jpg");
 }
 
 .hero > * {
