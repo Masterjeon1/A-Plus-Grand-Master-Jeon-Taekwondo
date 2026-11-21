@@ -107,6 +107,10 @@
          .video-soundtrack-button { display: block; margin: 12px auto; padding: 9px 14px; border: 1px solid var(--gold); border-radius: 6px; color: white; background: var(--royal-blue); font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
          .video-soundtrack-button:hover { background: var(--secondary); }
          .video-soundtrack-button:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2px; }
+         .introduction-video { display: block; width: 100%; max-width: 850px; margin: 0 auto; aspect-ratio: 16 / 9; background: var(--navy); border-radius: 10px; }
+         .introduction-transcript { max-width: 850px; margin: 16px auto 0; color: var(--muted); }
+         .introduction-transcript summary { color: var(--navy); font-weight: 700; cursor: pointer; }
+         .introduction-transcript summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: 4px; }
          .gallery-card img[src="2025-05-06.jpg"] { object-fit: contain; }
          .gallery-card img[src="image000000(2922).jpg"] { object-fit: contain; object-position: center 30%; background: var(--navy); }
          .gallery-card img[src="17861804_1512677362084192_6781998400995938239_n.jpg"] { object-position: center 20%; }
@@ -224,6 +228,22 @@
                 <a href="tel:9088797721" class="btn btn-outline">Call 908-879-7721</a>
             </div>
         </div>
+    </section>
+
+    <section class="section" aria-labelledby="introduction-title">
+        <div class="section-title">
+            <h2 id="introduction-title">Welcome to Our Dojang</h2>
+            <div class="underline"></div>
+            <p>Get to know A Plus Grand Master Jeon Taekwondo.</p>
+        </div>
+        <video id="introduction-video" class="introduction-video" controls playsinline preload="none" poster="1000024514.jpg" aria-label="Introduction to A Plus Grand Master Jeon Taekwondo">
+            <source src="introduction.mp4" type="video/mp4">
+            Your browser does not support video. <a href="introduction.mp4">Download the introduction video</a>.
+        </video>
+        <details class="introduction-transcript">
+            <summary>Video description</summary>
+            <p>Our school in Chester, New Jersey has served the community since 2002. The video shows our dojang, classes and a demonstration, introducing training for kids, teens and adults and private lessons with 7th-degree black belt Grand Master Jeon. Try a free class at 23 W. Main St, Chester, NJ or call 908-879-7721. Instrumental music plays throughout.</p>
+        </details>
     </section>
 
     <section id="about" class="section">
@@ -854,6 +874,7 @@
 
             const button = document.getElementById('music-toggle');
             const status = document.getElementById('music-status');
+            const introductionVideo = document.getElementById('introduction-video');
             const classVideo = document.getElementById('dojang-class-action-video');
             const videoButton = document.getElementById('class-action-soundtrack');
             const melody = [69, 72, 74, 76, 79, 76, 74, 72, 69, 72, 74, 79, 81, 79, 76, 74];
@@ -902,6 +923,7 @@
             }
 
             async function startMusic() {
+                introductionVideo.pause();
                 if (!audio) {
                     const AudioContext = window.AudioContext;
                     if (!AudioContext) throw new Error('Web Audio is not supported');
@@ -978,6 +1000,13 @@
                 }
             });
 
+            introductionVideo.addEventListener('play', () => {
+                classVideo.pause();
+                if (audio && audio.state === 'running') {
+                    stopMusic().catch(error => reportPlaybackError(error, 'Background music could not stop'));
+                }
+            });
+            classVideo.addEventListener('play', () => introductionVideo.pause());
             classVideo.addEventListener('pause', () => {
                 if (videoMusicActive && !classVideo.ended) {
                     stopMusic().catch(error => reportPlaybackError(error, 'Video soundtrack could not stop'));
