@@ -47,55 +47,6 @@
     z-index: 1;
 }
 
-.hero::before,
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 0;
-    width: min(105vw, 900px);
-    aspect-ratio: 1;
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.08);
-}
-
-.hero::before {
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1%, rgba(244, 212, 71, 0.88) 3%, rgba(210, 31, 53, 0.62) 9%, rgba(8, 119, 122, 0.32) 19%, transparent 49%);
-    animation: big-bang-flash 1.55s ease-out 0.08s both;
-}
-
-.hero::after {
-    background:
-        radial-gradient(circle, transparent 0 28%, rgba(244, 212, 71, 0.95) 28.3% 28.8%, transparent 29.2% 43%, rgba(210, 31, 53, 0.8) 43.3% 43.8%, transparent 44.2%),
-        repeating-conic-gradient(from 8deg, transparent 0deg 8deg, rgba(255, 241, 168, 0.8) 8.4deg 9.2deg, transparent 9.6deg 15deg);
-    -webkit-mask-image: radial-gradient(circle, transparent 0 12%, #000 20% 67%, transparent 79%);
-    mask-image: radial-gradient(circle, transparent 0 12%, #000 20% 67%, transparent 79%);
-    animation: big-bang-shockwave 1.9s cubic-bezier(0.12, 0.72, 0.22, 1) both;
-}
-
-@keyframes big-bang-flash {
-    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.08); }
-    12% { opacity: 0.86; }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(2.4); }
-}
-
-@keyframes big-bang-shockwave {
-    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.08) rotate(-12deg); }
-    12% { opacity: 0.9; }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(2.25) rotate(18deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero::before,
-    .hero::after {
-        animation: none;
-        display: none;
-    }
-}
-
 .award-banner {
     background: var(--gold-shine);
     border-color: var(--gold-light);
