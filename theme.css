@@ -236,20 +236,6 @@ nav a:hover,
     line-height: 1.75;
 }
 
-.award-banner {
-    padding: 18px 22px;
-    border: 1px solid rgba(var(--gold-rgb), 0.6);
-    border-radius: 8px;
-    background: #fffaf0;
-    box-shadow: none;
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
-}
-
-.award-banner::after {
-    animation: none;
-    display: none;
-}
-
 .bg-light {
     background: #f1f6f5;
 }
